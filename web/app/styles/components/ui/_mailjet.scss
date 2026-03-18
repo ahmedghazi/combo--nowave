@@ -1,0 +1,41 @@
+@use "../../mixins";
+@use "../../variables";
+
+.mailjet {
+  .title {
+    @media all and (min-width: variables.$md) {
+      text-align: right;
+    }
+    margin-bottom: 1em;
+  }
+  form {
+    display: flex;
+    justify-content: flex-end;
+    font-family: var(--font-primary-mono);
+  }
+  .flex {
+    border: var(--border);
+    width: 100%;
+    @media all and (min-width: variables.$md) {
+      max-width: mixins.toRem(268);
+    }
+  }
+
+  input {
+    border: none;
+    padding: mixins.toRem(14) var(--spacing-lg);
+
+    &::placeholder {
+      color: var(--color-primary);
+    }
+  }
+  button {
+    font-style: unset;
+    font-weight: unset;
+    padding: 0 1em;
+  }
+
+  .status {
+    text-align: right;
+  }
+}

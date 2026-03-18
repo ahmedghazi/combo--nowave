@@ -1,0 +1,21 @@
+@use "../../variables";
+
+.cookies {
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  left: var(--spacing-50);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: var(--border);
+  width: calc(50% - var(--spacing-50));
+  .inner {
+    padding: var(--spacing-md);
+  }
+
+  @media all and (max-width: variables.$md) {
+    width: calc(100% - var(--spacing-md) * 2);
+    right: var(--spacing-md);
+    left: var(--spacing-md);
+  }
+}
