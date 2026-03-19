@@ -2,17 +2,16 @@
 @use "../variables";
 
 header {
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 50;
-  background-color: var(--color-bg);
+  background-color: rgba(255, 255, 255, 0.5);
   transition:
     transform 0.3s var(--cubic),
     opacity 0.3s var(--cubic);
-
-  .marquee-wrapper {
-    height: calc(var(--text-sm) * 2);
+  &:not(.is-above-viewport) {
+    position: sticky;
   }
   .inner {
     padding: 12px var(--spacing-50);

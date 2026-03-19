@@ -24,6 +24,9 @@ main {
   position: relative;
   // padding-top: var(--header-h);
 }
+header.is-home.is-above-viewport + main {
+  padding-top: var(--header-h);
+}
 
 .h-app {
   height: var(--app-height);

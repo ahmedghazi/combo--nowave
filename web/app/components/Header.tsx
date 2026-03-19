@@ -6,6 +6,8 @@ import Burger from "./ui/Burger";
 import { Settings } from "../types/sanity.types";
 
 import LogoAnimated from "./LogoAnimated";
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
 type Props = {
   settings: Settings;
@@ -13,12 +15,19 @@ type Props = {
 
 const Header = ({ settings }: Props) => {
   const { scrollDirection, scrollY } = useScroll();
+  const [isAboveViewport, setIsAboveViewport] = React.useState(true);
+  const pathname = usePathname();
+  React.useEffect(() => {
+    setIsAboveViewport(scrollY >= window.innerHeight);
+  }, [scrollY]);
 
   return (
     <header
-      className={`is-${
-        scrollY > 100 && scrollDirection ? scrollDirection : ""
-      }`}>
+      className={clsx(
+        `is-${scrollY > 100 && scrollDirection ? scrollDirection : ""}`,
+        isAboveViewport ? "is-above-viewport" : "",
+        pathname === "/" ? "is-home" : "",
+      )}>
       <div className='inner'>
         <div className='flex justify-between md:justify-start gap-xl  items-center'>
           {settings.logosLottie && (

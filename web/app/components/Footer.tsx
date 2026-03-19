@@ -4,6 +4,7 @@ import { Settings } from "../types/sanity.types";
 import AOS from "./ui/AOS";
 import { _linkResolver, _localizeField } from "../sanity-api/utils";
 import Link from "next/link";
+import LogoAnimated from "./LogoAnimated";
 
 type Props = {
   settings: Settings;
@@ -15,7 +16,7 @@ const Footer = ({ settings }: Props) => {
     <footer className={settings.footerDark ? "is-dark" : ""}>
       <div className='grid gap-lg'>
         <div className='logo'>
-          <svg
+          {/* <svg
             width='85'
             height='85'
             viewBox='0 0 85 85'
@@ -29,7 +30,10 @@ const Footer = ({ settings }: Props) => {
               d='M42.5046 0C42.5046 55.7237 61.5369 85 85.0092 85V0H42.5046Z'
               fill='black'
             />
-          </svg>
+          </svg> */}
+          {settings.logosLottie && (
+            <LogoAnimated items={settings.logosLottie} />
+          )}
           {/* {settings?.comboLogo && (
             <Image
               src={urlFor(settings.comboLogo?.asset, 230)}

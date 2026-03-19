@@ -17,12 +17,10 @@ const Splash = ({ settings }: Props) => {
   const [del, setDel] = useState(false);
   const { userHistory } = usePageContext();
   const { logosLottie, logo, baseline } = settings;
-  console.log(userHistory);
-  // const canDisplay = userHistory.length === 1 && pathname === "/";
-  const canDisplay = useMemo(
-    () => userHistory.length === 1 && pathname === "/",
-    [userHistory, pathname],
-  );
+  // const canDisplay = useMemo(
+  //   () => userHistory.length === 1 && pathname === "/",
+  //   [userHistory, pathname],
+  // );
 
   // useEffect(() => {
   //   if (!canDisplay) return;
@@ -40,7 +38,7 @@ const Splash = ({ settings }: Props) => {
   //   }
   // }, [collapse]);
 
-  return (
+  return pathname === "/" ? (
     <div
       className={clsx(
         "splash",
@@ -56,7 +54,7 @@ const Splash = ({ settings }: Props) => {
         <div className='baseline'>{_localizeField(baseline)}</div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default Splash;

@@ -42,13 +42,13 @@ const ModuleHeroVideoUI = ({ input }: Props) => {
         />
         // </AOS>
       )}
-      {/* {playbackId && (
+      {playbackId && (
         <MuxVideoPlayer
           playbackId={playbackId}
           title={_localizeField(title)}
           controls={true}
         />
-      )} */}
+      )}
 
       <div className='overlay'>
         <div className='inner'>
