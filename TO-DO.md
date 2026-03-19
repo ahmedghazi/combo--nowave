@@ -1,4 +1,6 @@
-- mux video sanity + front
+<!-- - mux video sanity + front -->
+
 - callage typo
 - prehome
-- nav locale
+<!-- - nav locale -->
+- footer

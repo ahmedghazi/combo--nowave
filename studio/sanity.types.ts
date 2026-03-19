@@ -283,6 +283,18 @@ export type SummaryDetail = {
   detail?: LocaleBlockContent;
 };
 
+export type LocaleBlockContent = {
+  _type: "localeBlockContent";
+  fr?: BlockContent;
+  en?: BlockContent;
+};
+
+export type LocaleString = {
+  _type: "localeString";
+  fr?: string;
+  en?: string;
+};
+
 export type CardImageText = {
   _type: "cardImageText";
   title?: LocaleString;
@@ -400,12 +412,6 @@ export type LinkModal = {
   target?: "modal-works";
 };
 
-export type LocaleString = {
-  _type: "localeString";
-  fr?: string;
-  en?: string;
-};
-
 export type HomeReference = {
   _ref: string;
   _type: "reference";
@@ -465,12 +471,6 @@ export type BlockContent = Array<{
   _key: string;
 } & Embed>;
 
-export type LocaleBlockContent = {
-  _type: "localeBlockContent";
-  fr?: BlockContent;
-  en?: BlockContent;
-};
-
 export type LocaleText = {
   _type: "localeText";
   fr?: string;
@@ -502,18 +502,6 @@ export type Studio = {
   seo?: Seo;
   title?: LocaleString;
   slug?: Slug;
-  subTitle?: string;
-  location?: string;
-  imageCover?: Figure;
-  imageHero?: Figure;
-  SliderHero?: Array<{
-    _key: string;
-  } & Figure>;
-  excerpt?: LocaleString;
-  text?: LocaleBlockContent;
-  infos?: Array<{
-    _key: string;
-  } & SummaryDetail>;
 };
 
 export type Lieu = {
@@ -588,6 +576,7 @@ export type Settings = {
   _updatedAt: string;
   _rev: string;
   siteName?: string;
+  baseline?: LocaleString;
   logosLottie?: Array<{
     asset?: SanityFileAssetReference;
     media?: unknown;
@@ -595,6 +584,13 @@ export type Settings = {
     _key: string;
   }>;
   logo?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  logoIcon?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
@@ -1061,5 +1057,5 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type AllSanitySchemaTypes = SliderCardImageTextUI | TextImageUI | HeroSplitUI | HeroSplitScrollUI | SanityImageAssetReference | CallOutUI | SliderUI | SanityImageCrop | SanityImageHotspot | SplitImageTextUI | MarqueeUI | PageModulaireReference | ListPageUI | TagReference | ListCardImageTextUI | TalentReference | ListTalentsUI | ContactsUI | LogosUI | HeroVideoUI | HeroUI | ImagesUI | ImageUI | TextsUI | TextUI | TitleUI | SummaryDetail | CardImageText | Figure | Video | KeyValGroup | KeyValSimple | KeyValText | KeyVal | Embed | Seo | MenuItem | LinkIcon | LinkAnchor | LinkModal | LocaleString | HomeReference | LinkInternal | LinkExternal | BlockContent | LocaleBlockContent | LocaleText | Tag | Slug | Studio | Lieu | SanityFileAssetReference | Settings | Infos | Landing | Home | PageModulaire | Talent | MuxVideoAssetReference | MuxVideo | MuxVideoAsset | MuxAssetData | MuxStaticRenditions | MuxStaticRenditionFile | MuxPlaybackId | MuxTrack | MediaTag | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint;
+export type AllSanitySchemaTypes = SliderCardImageTextUI | TextImageUI | HeroSplitUI | HeroSplitScrollUI | SanityImageAssetReference | CallOutUI | SliderUI | SanityImageCrop | SanityImageHotspot | SplitImageTextUI | MarqueeUI | PageModulaireReference | ListPageUI | TagReference | ListCardImageTextUI | TalentReference | ListTalentsUI | ContactsUI | LogosUI | HeroVideoUI | HeroUI | ImagesUI | ImageUI | TextsUI | TextUI | TitleUI | SummaryDetail | LocaleBlockContent | LocaleString | CardImageText | Figure | Video | KeyValGroup | KeyValSimple | KeyValText | KeyVal | Embed | Seo | MenuItem | LinkIcon | LinkAnchor | LinkModal | HomeReference | LinkInternal | LinkExternal | BlockContent | LocaleText | Tag | Slug | Studio | Lieu | SanityFileAssetReference | Settings | Infos | Landing | Home | PageModulaire | Talent | MuxVideoAssetReference | MuxVideo | MuxVideoAsset | MuxAssetData | MuxStaticRenditions | MuxStaticRenditionFile | MuxPlaybackId | MuxTrack | MediaTag | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint;
 

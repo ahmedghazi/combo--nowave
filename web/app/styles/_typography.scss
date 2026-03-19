@@ -1,31 +1,60 @@
 @use "variables";
 
+// @font-face {
+//   font-family: "NTBau-Regular";
+//   src:
+//     url("./fonts/NTBau-Regular.woff") format("woff"),
+//     url("./fonts/NTBau-Regular.woff2") format("woff2");
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: "NTBau-Bold";
+//   src:
+//     url("./fonts/NTBau-Bold.woff") format("woff"),
+//     url("./fonts/NTBau-Bold.woff2") format("woff2");
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: "NTBau-Mono-Regular";
+//   src:
+//     url("./fonts/NTBau-Mono-Regular.woff") format("woff"),
+//     url("./fonts/NTBau-Mono-Regular.woff2") format("woff2");
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: "VCGosh-Bold";
+//   src:
+//     url("./fonts/VCGosh-Bold.woff") format("woff"),
+//     url("./fonts/VCGosh-Bold.woff2") format("woff2");
+//   font-display: swap;
+// }
+
 @font-face {
-  font-family: "NTBau-Regular";
+  font-family: "swiza-medium";
   src:
-    url("./fonts/NTBau-Regular.woff") format("woff"),
-    url("./fonts/NTBau-Regular.woff2") format("woff2");
+    url("./fonts/swiza-medium-webfont.woff") format("woff"),
+    url("./fonts/swiza-medium-webfont.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
-  font-family: "NTBau-Bold";
+  font-family: "swiza-mediumitalic";
   src:
-    url("./fonts/NTBau-Bold.woff") format("woff"),
-    url("./fonts/NTBau-Bold.woff2") format("woff2");
+    url("./fonts/swiza-mediumitalic-webfont.woff") format("woff"),
+    url("./fonts/swiza-mediumitalic-webfont.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
-  font-family: "NTBau-Mono-Regular";
+  font-family: "swiza-regular";
   src:
-    url("./fonts/NTBau-Mono-Regular.woff") format("woff"),
-    url("./fonts/NTBau-Mono-Regular.woff2") format("woff2");
+    url("./fonts/swiza-regular-webfont.woff") format("woff"),
+    url("./fonts/swiza-regular-webfont.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
-  font-family: "VCGosh-Bold";
+  font-family: "swiza-regularitalic";
   src:
-    url("./fonts/VCGosh-Bold.woff") format("woff"),
-    url("./fonts/VCGosh-Bold.woff2") format("woff2");
+    url("./fonts/swiza-regularitalic-webfont.woff") format("woff"),
+    url("./fonts/swiza-regularitalic-webfont.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -61,9 +90,11 @@ html {
 //     font-size: 1vw;
 //   }
 // }
-
+em,
+i,
 .italic {
-  font-style: italic;
+  font-style: unset;
+  font-family: var(--font-primary-i);
 }
 
 /* Headings */
@@ -75,6 +106,7 @@ h5,
 h6 {
   // font-size: var(--text-md);
   font-weight: normal;
+  font-family: var(--font-secondary);
 }
 .headline {
   // margin-bottom: 1rem;
@@ -82,11 +114,23 @@ h6 {
   font-size: var(--text-xl);
   font-family: var(--font-secondary);
   line-height: 1;
+  em,
+  i,
+  .italic {
+    font-style: unset;
+    font-family: var(--font-secondary-i);
+  }
 }
 .text-xl,
 .md\:text-xl {
   font-family: var(--font-secondary);
   letter-spacing: -1%;
+  em,
+  i,
+  .italic {
+    font-style: unset;
+    font-family: var(--font-secondary-i);
+  }
 }
 .font-secondary {
   line-height: 1;

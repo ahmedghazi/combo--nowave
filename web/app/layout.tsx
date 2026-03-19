@@ -11,6 +11,7 @@ import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import CookieConsent from "./components/ui/CookieConsent";
 import { getSettings } from "./sanity-api/sanity-queries";
+import Splash from "./components/Splash";
 
 export const metadata = {
   metadataBase: new URL(website.url),
@@ -27,12 +28,13 @@ export default async function RootLayout({
 }) {
   const settings = await getSettings();
   return (
-    <html lang="fr">
-      <body className={""} data-theme="theme-xyz">
+    <html lang='fr'>
+      <body className={""} data-theme='theme-xyz'>
         {/* <PageTransition> */}
         <LocaleContextProvider>
           <PageContextProvider>
-            <div id="page">
+            <div id='page'>
+              <Splash settings={settings} />
               <Header settings={settings} />
 
               <main>{children}</main>

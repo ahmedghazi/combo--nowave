@@ -11,17 +11,22 @@
   --color-accent: #e74011;
 
   --font-primary:
-    "NTBau-Regular", "Helvetica Neue", "HelveticaNeueRoman",
+    "swiza-regular", "NTBau-Regular", "Helvetica Neue", "HelveticaNeueRoman",
     "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
     "Helvetica", "Arial", sans-serif;
-  --font-primary-mono:
-    "NTBau-Mono-Regular", "Helvetica Neue", "HelveticaNeueRoman",
-    "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
-    "Helvetica", "Arial", sans-serif;
+  --font-primary-i:
+    "swiza-regularitalic", "NTBau-Regular", "Helvetica Neue",
+    "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman",
+    "TeXGyreHerosRegular", "Helvetica", "Arial", sans-serif;
+
   --font-secondary:
-    "NTBau-Bold", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman",
-    "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Arial",
-    sans-serif;
+    "swiza-medium", "NTBau-Bold", "Helvetica Neue", "HelveticaNeueRoman",
+    "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
+    "Helvetica", "Arial", sans-serif;
+  --font-secondary-i:
+    "swiza-mediumitalic", "NTBau-Bold", "Helvetica Neue", "HelveticaNeueRoman",
+    "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
+    "Helvetica", "Arial", sans-serif;
 
   --spacing-xs: 0.4em;
   --spacing-sm: 0.625em;

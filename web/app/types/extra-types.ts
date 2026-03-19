@@ -1,6 +1,11 @@
 // import { SanityKeyed } from "sanity-codegen";
 
-import { HeroVideoUI, ListTalentsUI, SanityImageAsset, TitleUI } from "./sanity.types";
+import {
+  HeroVideoUI,
+  ListTalentsUI,
+  SanityImageAsset,
+  TitleUI,
+} from "./sanity.types";
 
 export type HeroVideoUIExpanded = Omit<HeroVideoUI, "image"> & {
   image?: {
@@ -34,28 +39,6 @@ import {
 } from "./schema";
 
 export interface ModulesList {
-  // modules: Array<
-  //   | SanityKeyed<TextUI>
-  //   | SanityKeyed<TextsUI>
-  //   | SanityKeyed<TextImageUI>
-  //   | SanityKeyed<HeroUI>
-  //   | SanityKeyed<ImagesUI>
-  //   | SanityKeyed<LogosUI>
-  //   | SanityKeyed<ContactsUI>
-  //   | SanityKeyed<ListCardImageTextUI>
-  //   | SanityKeyed<ListLieuUI>
-  //   | SanityKeyed<ListStudioUI>
-  //   | SanityKeyed<ListLModulaireUI>
-  //   | SanityKeyed<ListPageUI>
-  //   | SanityKeyed<ImageUI>
-  //   | SanityKeyed<MarqueeUI>
-  //   | SanityKeyed<SplitImageTextUI>
-  //   | SanityKeyed<SliderUI>
-  //   | SanityKeyed<CallOutUI>
-  //   | SanityKeyed<HeroSplitScrollUI>
-  //   | SanityKeyed<HeroSplitUI>
-  //   | SanityKeyed<SliderCardImageTextUI>
-  // >;
   modules: Array<
     | ({
         _key: string;
@@ -90,6 +73,15 @@ export interface ModulesList {
     | ({
         _key: string;
       } & ListCardImageTextUI)
+    | ({
+        _key: string;
+      } & ListLieuUI)
+    | ({
+        _key: string;
+      } & ListStudioUI)
+    | ({
+        _key: string;
+      } & ListLModulaireUI)
     | ({
         _key: string;
       } & ListTalentsUI)

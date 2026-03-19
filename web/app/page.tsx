@@ -1,12 +1,13 @@
 import { draftMode } from "next/headers";
 import { Metadata } from "next";
 import website from "./config/website";
-import { getHome, HOME_QUERY } from "./sanity-api/sanity-queries";
+import { getHome, getSettings, HOME_QUERY } from "./sanity-api/sanity-queries";
 import { Home } from "./types/schema";
 import { notFound } from "next/navigation";
 import { getClient } from "./sanity-api/sanity.client";
 import { urlFor } from "./sanity-api/sanity-utils";
 import ContentModulaire from "./components/ContentModulaire";
+import Splash from "./components/Splash";
 
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getHome();
@@ -39,6 +40,7 @@ const HomePage = async function Page() {
     data = (await getHome()) as Home;
   }
 
+  // const settings = await getSettings();
   if (!data) return notFound();
 
   return (

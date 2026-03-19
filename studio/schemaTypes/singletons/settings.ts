@@ -47,6 +47,12 @@ export default defineType({
       type: 'string',
       group: 'header',
     }),
+    defineField({
+      name: 'baseline',
+      title: 'Baseline',
+      type: 'localeString',
+      group: 'header',
+    }),
     // defineField({
     //   name: 'description',
     //   title: 'Description',
@@ -71,6 +77,15 @@ export default defineType({
     defineField({
       name: 'logo',
       title: 'Logo',
+      type: 'image',
+      options: {
+        accept: 'image/svg+xml',
+      },
+      group: 'header',
+    }),
+    defineField({
+      name: 'logoIcon',
+      title: 'Logo Icon',
       type: 'image',
       options: {
         accept: 'image/svg+xml',
@@ -127,6 +142,7 @@ export default defineType({
         accept: 'image/svg+xml',
       },
       group: 'footer',
+      hidden: true,
     }),
 
     defineField({

@@ -12,9 +12,21 @@ footer {
     color: white;
   }
   .logo {
-    width: 207px;
+    width: 92px;
     max-width: 100%;
     margin: auto;
+  }
+  #nav-secondary {
+    ul {
+      gap: calc(1 * 100% / 12);
+    }
+    li {
+      width: calc(2 * 100% / 12);
+    }
+    a {
+      display: block;
+      text-align: center;
+    }
   }
 
   @media all and (min-width: variables.$sm) and (max-width: variables.$md) {

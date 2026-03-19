@@ -28,10 +28,12 @@ const CardTalent = ({ input }: Props) => {
             {name && <h3>{name}</h3>}
           </div>
           {text && (
-            <PortableText
-              value={_localizeField(text)}
-              components={portableTextComponents}
-            />
+            <div className='excerpt'>
+              <PortableText
+                value={_localizeField(text)}
+                components={portableTextComponents}
+              />
+            </div>
           )}
           {links && (
             <ul className='links'>

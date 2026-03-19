@@ -123,6 +123,14 @@ export const heroVideoUI = `
 			...,
 			asset->
 		},
+		videoLandscape{
+			...,
+			asset->
+		},
+		videoPortrait{
+			...,
+			asset->
+		},
 		talent->{
 			name
 		}
@@ -203,7 +211,15 @@ export const listLPageUI = `
 				...,
 				asset->
 			},
-			tags[]->
+			tags[]->,
+
+		},
+		cta{
+			...,
+			link->{
+				_type,
+				slug
+			}
 		}
 	}
 `;

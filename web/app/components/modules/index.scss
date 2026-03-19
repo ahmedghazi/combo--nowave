@@ -137,9 +137,18 @@
         @media all and (max-width: variables.$md) {
           padding: var(--spacing-50) var(--spacing-m-md);
         }
+        .col-txt {
+          padding: var(--spacing-50) calc(var(--spacing-50) - var(--gutter));
+          @media all and (max-width: variables.$md) {
+            padding: var(--spacing-m-md);
+          }
+        }
       }
       h2.headline {
         line-height: 0.65;
+      }
+      .row.reverse {
+        flex-direction: row-reverse;
       }
     }
     &.module--contacts-ui {
@@ -493,6 +502,7 @@
       }
     }
     &.module--hero-video-ui {
+      background-color: black;
       height: calc(100dvh - var(--header-h));
       .overlay {
         position: absolute;
@@ -500,15 +510,26 @@
         padding: var(--spacing-50);
         color: #fff;
         mix-blend-mode: difference;
+        pointer-events: none;
+        a {
+          pointer-events: all;
+        }
         .inner {
           height: 100%;
           position: relative;
         }
+        svg,
         .brand,
         .title,
         .talent,
         .date {
           position: absolute;
+        }
+        svg {
+          width: 85px;
+          height: 85px;
+          left: 50%;
+          transform: translateX(-50%);
         }
         .brand {
           top: 0;
@@ -526,15 +547,23 @@
           bottom: 0;
           right: 0;
         }
+        a:hover {
+          color: white;
+          text-decoration: underline;
+        }
       }
     }
     &.module--title-ui {
       .inner {
-        padding: var(--spacing-lg) var(--spacing-50);
+        padding: var(--spacing-50);
       }
       h2 {
         text-align: center;
         margin: 0;
+        text-transform: uppercase;
+      }
+      & + .module--text-image-ui .inner {
+        padding-top: 0;
       }
     }
     @media all and (max-width: 1300px) {

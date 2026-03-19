@@ -68,6 +68,9 @@
     }
   }
   &--talent {
+    .excerpt p {
+      margin: 0;
+    }
     .links {
       display: flex;
       gap: var(--spacing-sm);

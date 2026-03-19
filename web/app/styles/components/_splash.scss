@@ -1,0 +1,14 @@
+.splash {
+  height: 100dvh;
+  padding: var(--spacing-50);
+  .flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .logo-animated {
+      flex-shrink: 0;
+      height: 85px;
+    }
+  }
+}

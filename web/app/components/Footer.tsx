@@ -1,13 +1,8 @@
 "use client";
 import React from "react";
 import { Settings } from "../types/schema";
-import Image from "next/image";
-import { PortableText } from "next-sanity";
 import AOS from "./ui/AOS";
-import MailJet from "./ui/MailJet";
 import { _linkResolver, _localizeField } from "../sanity-api/utils";
-import portableTextComponents from "../sanity-api/portableTextComponents";
-import { urlFor } from "../sanity-api/sanity-utils";
 import Link from "next/link";
 
 type Props = {
@@ -18,21 +13,24 @@ const Footer = ({ settings }: Props) => {
   // const {}
   return (
     <footer className={settings.footerDark ? "is-dark" : ""}>
-      <div className='grid md:grid-cols-3 gap-lg md:gap-md'>
-        <div className='text'>
-          {settings?.footerInfos && (
-            <div className='text mx-auto'>
-              <AOS>
-                <PortableText
-                  value={_localizeField(settings.footerInfos)}
-                  components={portableTextComponents}
-                />
-              </AOS>
-            </div>
-          )}
-        </div>
+      <div className='grid gap-lg'>
         <div className='logo'>
-          {settings?.comboLogo && (
+          <svg
+            width='85'
+            height='85'
+            viewBox='0 0 85 85'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='M0 0V85H42.5046C42.5046 29.2763 23.4723 0 0 0Z'
+              fill='black'
+            />
+            <path
+              d='M42.5046 0C42.5046 55.7237 61.5369 85 85.0092 85V0H42.5046Z'
+              fill='black'
+            />
+          </svg>
+          {/* {settings?.comboLogo && (
             <Image
               src={urlFor(settings.comboLogo?.asset, 230)}
               width={
@@ -53,15 +51,21 @@ const Footer = ({ settings }: Props) => {
               // placeholder='blur'
               // placeholder={logo.asset?.metadata?.lqip}
             />
-          )}
+          )} */}
+        </div>
+        <div className='text-center'>
+          <a href='mailto:contact@nowaveagency.com' className='text-xl'>
+            contact@nowaveagency.com
+          </a>
         </div>
         <nav id='nav-secondary'>
           <AOS delay={1}>
-            <ul className='flex flex-col md:items-end'>
+            <ul className='flex justify-center gap-md'>
               {settings?.navSecondary?.map((item, i) => (
                 <li key={i}>
                   {item.link && item.label && item._type === "linkExternal" && (
                     <a
+                      className='cta'
                       href={item.link}
                       target='_blank'
                       rel='noopener noreferrer'>
@@ -78,7 +82,24 @@ const Footer = ({ settings }: Props) => {
             </ul>
           </AOS>
         </nav>
+        <div className='credits text-center'>
+          Website designed by Ahmed Gazi / Art direction by Nicolas Malinowsky
+        </div>
       </div>
+      {/* <div className='grid md:grid-cols-3 gap-lg md:gap-md'>
+        <div className='text'>
+          {settings?.footerInfos && (
+            <div className='text mx-auto'>
+              <AOS>
+                <PortableText
+                  value={_localizeField(settings.footerInfos)}
+                  components={portableTextComponents}
+                />
+              </AOS>
+            </div>
+          )}
+        </div>
+      </div> */}
     </footer>
   );
 };

@@ -58,7 +58,9 @@ const ModuleListPageUI = ({ input }: Props) => {
         </div>
       </div>
       {cta && (
-        <Link href={_linkResolver(cta.link)} className='cta cta--block'>
+        <Link
+          href={_linkResolver(cta.link)}
+          className='cta cta--block font-secondary'>
           {_localizeField(cta.label)}
         </Link>
       )}
