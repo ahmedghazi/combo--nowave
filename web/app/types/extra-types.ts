@@ -1,9 +1,25 @@
 // import { SanityKeyed } from "sanity-codegen";
 
 import {
+  CallOutUI,
+  ContactsUI,
+  HeroSplitScrollUI,
+  HeroSplitUI,
+  HeroUI,
   HeroVideoUI,
+  ImagesUI,
+  ImageUI,
+  ListCardImageTextUI,
+  ListPageUI,
   ListTalentsUI,
+  LogosUI,
+  MarqueeUI,
   SanityImageAsset,
+  SliderCardImageTextUI,
+  SplitImageTextUI,
+  TextImageUI,
+  TextsUI,
+  TextUI,
   TitleUI,
 } from "./sanity.types";
 
@@ -14,29 +30,6 @@ export type HeroVideoUIExpanded = Omit<HeroVideoUI, "image"> & {
     caption?: string;
   };
 };
-import {
-  CallOutUI,
-  ContactsUI,
-  HeroSplitScrollUI,
-  HeroSplitUI,
-  HeroUI,
-  ImageUI,
-  ListCardImageTextUI,
-  ListLieuUI,
-  ListLModulaireUI,
-  ListStudioUI,
-  ListPageUI,
-  MarqueeUI,
-  SanityKeyed,
-  SliderUI,
-  SplitImageTextUI,
-  TextImageUI,
-  TextUI,
-  SliderCardImageTextUI,
-  TextsUI,
-  ImagesUI,
-  LogosUI,
-} from "./schema";
 
 export interface ModulesList {
   modules: Array<
@@ -73,15 +66,6 @@ export interface ModulesList {
     | ({
         _key: string;
       } & ListCardImageTextUI)
-    | ({
-        _key: string;
-      } & ListLieuUI)
-    | ({
-        _key: string;
-      } & ListStudioUI)
-    | ({
-        _key: string;
-      } & ListLModulaireUI)
     | ({
         _key: string;
       } & ListTalentsUI)

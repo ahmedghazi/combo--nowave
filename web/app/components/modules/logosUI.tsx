@@ -1,9 +1,9 @@
 import React from "react";
 import clsx from "clsx";
-import { LogosUI } from "@/app/types/schema";
 import Figure from "../ui/Figure";
 import AOS from "../ui/AOS";
 import { _localizeField } from "@/app/sanity-api/utils";
+import { LogosUI } from "@/app/types/sanity.types";
 
 type Props = {
   input: LogosUI;
@@ -28,7 +28,7 @@ const ModulelogosUI = ({ input }: Props) => {
         )}
         <div className={clsx("flex justify-center gap-lg")}>
           {items?.map((item, index) => (
-            <div key={index} className="item">
+            <div key={index} className='item'>
               <AOS delay={index / 5}>
                 <Figure asset={item.image?.asset} width={1000} />
                 {/* <figcaption className="py-2">{item.caption}</figcaption> */}

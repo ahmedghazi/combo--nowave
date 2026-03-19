@@ -1,16 +1,16 @@
 import React, { useMemo, useState } from "react";
-import { ListPageUI, SanityKeyedReference, Tag } from "@/app/types/schema";
 import clsx from "clsx";
 import CardPage from "../ui/CardPage";
 import { _linkResolver, _localizeField } from "@/app/sanity-api/utils";
 import Link from "next/link";
+import { ListPageUI, Tag } from "@/app/types/sanity.types";
 
 type Props = {
   input: ListPageUI;
 };
 
 const ModuleListPageUI = ({ input }: Props) => {
-  const { title, gridSize, items, navTags, cta } = input;
+  const { title, gridSize, items, cta } = input;
   const [tag, setTag] = useState<string>("");
 
   const updateTag = (val: string) => {
@@ -18,7 +18,7 @@ const ModuleListPageUI = ({ input }: Props) => {
     setTag(val === tag ? "" : val);
   };
 
-  const getIsInTag = (val: SanityKeyedReference<Tag>[] | undefined) => {
+  const getIsInTag = (val: Tag[] | undefined) => {
     if (!val) return "";
     const tagsSlug = val.map((el) => el.slug?.current);
     return tag !== "" && tagsSlug.includes(tag) ? "is-selected" : "";
@@ -28,7 +28,7 @@ const ModuleListPageUI = ({ input }: Props) => {
       <div className='inner'>
         <h2 className='headline'>{_localizeField(title)}</h2>
         {/* <pre>{JSON.stringify(navTags, null, 2)}</pre> */}
-        {navTags && navTags?.length > 0 && (
+        {/* {navTags && navTags?.length > 0 && (
           <ul className='flex flex-wrap justify-center gap-md mb-50'>
             {navTags.map((item, i) => (
               <li key={i}>
@@ -43,7 +43,7 @@ const ModuleListPageUI = ({ input }: Props) => {
               </li>
             ))}
           </ul>
-        )}
+        )} */}
         <div
           className={clsx(
             "grid gap-xl md:gap-y-xl md:gap-md",

@@ -1,14 +1,9 @@
-import {
-  ListCardImageTextUI,
-  LocaleString,
-  SanityKeyedReference,
-  Tag,
-} from "@/app/types/schema";
 import { _localizeField } from "@/app/sanity-api/utils";
 import React, { useState } from "react";
 import Card from "../ui/Card";
 import AOS from "../ui/AOS";
 import clsx from "clsx";
+import { ListCardImageTextUI, Tag } from "@/app/types/sanity.types";
 // import Slider from "../ui/slick-slider";
 
 type Props = {
@@ -31,20 +26,20 @@ const ModuleListCardImageTextUI = ({ input }: Props) => {
   //   return tag !== "" && val === tag ? "is-selected" : "";
   // };
 
-  const getIsInTag = (val: SanityKeyedReference<Tag>[] | undefined) => {
+  const getIsInTag = (val: Tag[] | undefined) => {
     if (!val) return "";
     const tagsSlug = val.map((el) => el.slug?.current);
     return tag !== "" && tagsSlug.includes(tag) ? "is-selected" : "";
   };
 
   return (
-    <section className="module module--list-card-image-text-ui">
-      <div className="inner">
-        <h2 className="headline">{_localizeField(title)}</h2>
+    <section className='module module--list-card-image-text-ui'>
+      <div className='inner'>
+        <h2 className='headline'>{_localizeField(title)}</h2>
 
         {navTags && navTags?.length > 0 && (
-          <ul className="flex flex-wrap justify-center gap-md mb-50">
-            {navTags.map((item: SanityKeyedReference<Tag>, i) => (
+          <ul className='flex flex-wrap justify-center gap-md mb-50'>
+            {navTags.map((item: Tag, i) => (
               <li key={i}>
                 <AOS delay={i / 5}>
                   <button
@@ -52,8 +47,7 @@ const ModuleListCardImageTextUI = ({ input }: Props) => {
                       "btn--pill text-accent ",
                       tag === item.slug?.current && "is-active",
                     )}
-                    onClick={() => updateTag(item.slug?.current || "")}
-                  >
+                    onClick={() => updateTag(item.slug?.current || "")}>
                     {_localizeField(item.title)}
                   </button>
                 </AOS>
@@ -66,8 +60,7 @@ const ModuleListCardImageTextUI = ({ input }: Props) => {
             "grid gap-xl md:gap-y-xl md:gap-md",
             `grid-cols-1 md:grid-cols-${gridSize || 3}`,
             tag !== "" && "is-filtering",
-          )}
-        >
+          )}>
           {items?.map((item, i) => (
             <div className={clsx("item", getIsInTag(item.tagsFilter))} key={i}>
               <AOS delay={i / 5}>

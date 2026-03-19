@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Settings } from "../types/schema";
+import { Settings } from "../types/sanity.types";
 import AOS from "./ui/AOS";
 import { _linkResolver, _localizeField } from "../sanity-api/utils";
 import Link from "next/link";

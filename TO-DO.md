@@ -1,6 +1,7 @@
 <!-- - mux video sanity + front -->
 
 - callage typo
-- prehome
-<!-- - nav locale -->
-- footer
+  <!-- - prehome -->
+  <!-- - nav locale -->
+  <!-- - footer -->
+- page talent

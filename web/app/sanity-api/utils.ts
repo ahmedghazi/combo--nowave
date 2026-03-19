@@ -1,16 +1,18 @@
 import React from "react";
 import locales from "../config/i18n";
 import UseLocaleContext from "../context/LocaleContext";
-import { Home, Infos, PageModulaire, Lieu } from "../types/schema";
+import { Home, Infos, PageModulaire, Talent } from "../types/sanity.types";
 
-export const _linkResolver = (node: Infos | PageModulaire | Home | any) => {
+export const _linkResolver = (
+  node: Infos | PageModulaire | Home | Talent | any,
+) => {
   // console.log(node);
   if (!node || !node._type || node._type === "home") return "/";
   // console.log(node._type);
   if (node._type === "home") return "/";
   switch (node._type) {
-    case "lieu":
-      return `/lieu/${node.slug?.current}`;
+    case "talent":
+      return `/talent/${node.slug?.current}`;
 
     default:
       return `/${node.slug?.current}`;

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Figure, HeroSplitScrollUI } from "@/app/types/schema";
 // import { urlFor } from "@/app/sanity-api/sanity-utils";
 import Image from "next/image";
 import useDeviceDetect from "@/app/hooks/useDeviceDetect";
 import { infinitScrollOnePage } from "@/app/lib/infinite-scroll-plugin-one-page";
 import { urlFor } from "@/app/sanity-api/sanity-utils";
+import { Figure, HeroSplitScrollUI } from "@/app/types/sanity.types";
 
 type Props = {
   input: HeroSplitScrollUI;

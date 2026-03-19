@@ -287,18 +287,6 @@ export type SummaryDetail = {
   detail?: LocaleBlockContent
 }
 
-export type LocaleBlockContent = {
-  _type: 'localeBlockContent'
-  fr?: BlockContent
-  en?: BlockContent
-}
-
-export type LocaleString = {
-  _type: 'localeString'
-  fr?: string
-  en?: string
-}
-
 export type CardImageText = {
   _type: 'cardImageText'
   title?: LocaleString
@@ -424,6 +412,12 @@ export type LinkModal = {
   target?: 'modal-works'
 }
 
+export type LocaleString = {
+  _type: 'localeString'
+  fr?: string
+  en?: string
+}
+
 export type HomeReference = Home
 
 export type LinkInternal = {
@@ -487,6 +481,12 @@ export type BlockContent = Array<
     } & Embed)
 >
 
+export type LocaleBlockContent = {
+  _type: 'localeBlockContent'
+  fr?: BlockContent
+  en?: BlockContent
+}
+
 export type LocaleText = {
   _type: 'localeText'
   fr?: string
@@ -518,6 +518,22 @@ export type Studio = {
   seo?: Seo
   title?: LocaleString
   slug?: Slug
+  subTitle?: string
+  location?: string
+  imageCover?: Figure
+  imageHero?: Figure
+  SliderHero?: Array<
+    {
+      _key: string
+    } & Figure
+  >
+  excerpt?: LocaleString
+  text?: LocaleBlockContent
+  infos?: Array<
+    {
+      _key: string
+    } & SummaryDetail
+  >
 }
 
 export type Lieu = {
@@ -1212,8 +1228,6 @@ export type AllSanitySchemaTypes =
   | TextUI
   | TitleUI
   | SummaryDetail
-  | LocaleBlockContent
-  | LocaleString
   | CardImageText
   | Figure
   | Video
@@ -1227,10 +1241,12 @@ export type AllSanitySchemaTypes =
   | LinkIcon
   | LinkAnchor
   | LinkModal
+  | LocaleString
   | HomeReference
   | LinkInternal
   | LinkExternal
   | BlockContent
+  | LocaleBlockContent
   | LocaleText
   | Tag
   | Slug

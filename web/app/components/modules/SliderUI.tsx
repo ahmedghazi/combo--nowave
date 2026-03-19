@@ -1,4 +1,4 @@
-import { SliderUI } from "@/app/types/schema";
+import { SliderUI } from "@/app/types/sanity.types";
 import React from "react";
 
 type Props = {

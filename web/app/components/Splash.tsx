@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Settings } from "../types/sanity.types";
+import React, { useEffect, useMemo, useState } from "react";
 import { _localizeField } from "../sanity-api/utils";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { usePageContext } from "../context/PageContext";
 import LogoAnimated from "./LogoAnimated";
+import { Settings } from "../types/sanity.types";
 
 type Props = {
   settings: Settings;
@@ -14,23 +14,39 @@ type Props = {
 const Splash = ({ settings }: Props) => {
   const pathname = usePathname();
   const [collapse, setCollapse] = useState(false);
+  const [del, setDel] = useState(false);
   const { userHistory } = usePageContext();
-  const canDisplay = userHistory.length === 1 && pathname === "/";
   const { logosLottie, logo, baseline } = settings;
   console.log(userHistory);
-  useEffect(() => {
-    if (!canDisplay) return;
-    setTimeout(() => {
-      setCollapse(true);
-    }, 2000);
-  }, [canDisplay]);
+  // const canDisplay = userHistory.length === 1 && pathname === "/";
+  const canDisplay = useMemo(
+    () => userHistory.length === 1 && pathname === "/",
+    [userHistory, pathname],
+  );
+
+  // useEffect(() => {
+  //   if (!canDisplay) return;
+  //   setTimeout(() => {
+  //     setCollapse(true);
+  //   }, 2000);
+  // }, [canDisplay]);
+
+  // useEffect(() => {
+  //   if (collapse) {
+  //     window.scrollTo(0, window.innerHeight);
+  //     setTimeout(() => {
+  //       setDel(true);
+  //     }, 1000);
+  //   }
+  // }, [collapse]);
 
   return (
     <div
       className={clsx(
         "splash",
-        { "is-collapsed": collapse },
-        { hidden: !canDisplay },
+        // { "is-collapsed": collapse },
+        // { hidden: !canDisplay },
+        { hidden: del },
       )}
       onMouseMove={() => setCollapse(true)}
       onClick={() => setCollapse(true)}>

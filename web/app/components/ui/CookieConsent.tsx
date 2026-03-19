@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import { hasCookie, setCookie, deleteCookie } from "cookies-next";
-import { LinkInternal } from "@/app/types/schema";
 import Link from "next/link";
 import { _linkResolver, _localizeField } from "@/app/sanity-api/utils";
+import { LinkInternal } from "@/app/types/sanity.types";
 
 type LegalslinkProps = {
   input: LinkInternal;
 };
 const Legalslink = ({ input }: LegalslinkProps) => (
-  <Link className="underline" href={_linkResolver(input.link)}>
+  <Link className='underline' href={_linkResolver(input.link)}>
     {_localizeField(input.label)}
   </Link>
 );
@@ -41,21 +41,20 @@ const CookieConsent = ({ legals }: Props) => {
     return null;
   }
   return (
-    <div className="cookies ">
-      <div className="inner ">
-        <div className="mb-md">
+    <div className='cookies '>
+      <div className='inner '>
+        <div className='mb-md'>
           Ce site internet utilise des cookies. Nous utilisons des cookies sur
           notre site pour améliorer votre expérience de navigation.{" "}
           {legals && <Legalslink input={legals} />}
         </div>
-        <div className="flex gap-md">
+        <div className='flex gap-md'>
           <button
-            className="btn--pill- underline"
-            onClick={() => refuseCookie()}
-          >
+            className='btn--pill- underline'
+            onClick={() => refuseCookie()}>
             REFUSER
           </button>
-          <button className="btn--pill" onClick={() => acceptCookie()}>
+          <button className='btn--pill' onClick={() => acceptCookie()}>
             ACCEPTER
           </button>
         </div>

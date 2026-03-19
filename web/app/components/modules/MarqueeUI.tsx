@@ -1,6 +1,6 @@
-import { MarqueeUI } from "@/app/types/schema";
 import React from "react";
 import Marquee from "../ui/Marquee";
+import { MarqueeUI } from "@/app/types/sanity.types";
 
 type MarqueeProps = {
   input: MarqueeUI;

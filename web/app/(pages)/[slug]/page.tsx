@@ -5,12 +5,12 @@ import {
   PAGE_MODULAIRE_QUERY,
 } from "@/app/sanity-api/sanity-queries";
 import { getClient } from "@/app/sanity-api/sanity.client";
-import { PageModulaire } from "@/app/types/schema";
 import { urlFor } from "@/app/sanity-api/sanity-utils";
 
 import { Metadata, NextPage } from "next";
 import { draftMode } from "next/headers";
 import React from "react";
+import { PageModulaire } from "@/app/types/sanity.types";
 
 export const revalidate = 3600; // revalidate every hour
 

@@ -1,18 +1,18 @@
 "use client";
 import React from "react";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import LinkTransition from "./ui/LinkTransition";
+import clsx from "clsx";
+import { _linkResolver, _localizeField } from "../sanity-api/utils";
+import LocalesSwitcher from "./ui/LocaleSwitcher";
 import {
   KeyVal,
   LinkExternal,
   LinkInternal,
   MenuItem,
-  SanityKeyed,
-} from "../types/schema";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import LinkTransition from "./ui/LinkTransition";
-import clsx from "clsx";
-import { _linkResolver, _localizeField } from "../sanity-api/utils";
-import LocalesSwitcher from "./ui/LocaleSwitcher";
+} from "../types/sanity.types";
 
 type NavLinkProps = {
   href: string;
@@ -34,21 +34,27 @@ const NavLink = ({ href, name, cta }: NavLinkProps) => {
 
 type Props = {
   input: Array<
-    | SanityKeyed<LinkInternal>
-    | SanityKeyed<LinkExternal>
-    | SanityKeyed<MenuItem>
+    | ({
+        _key: string;
+      } & LinkInternal)
+    | ({
+        _key: string;
+      } & LinkExternal)
+    | ({
+        _key: string;
+      } & MenuItem)
   >;
 };
 const NavPrimary = ({ input }: Props) => {
   // console.log(input);
-  const isLinkInternalWithSubmenu = (item: SanityKeyed<LinkInternal>) => {
+  const isLinkInternalWithSubmenu = (item: LinkInternal) => {
     return (
       item.link?._type === "pageModulaire" &&
       item.link.subMenu &&
       item.link.subMenu.length > 0
     );
   };
-  const isMenuItemWithSubmenu = (item: SanityKeyed<MenuItem>) => {
+  const isMenuItemWithSubmenu = (item: MenuItem) => {
     return item.subMenu && item.subMenu.length > 0;
   };
 
@@ -97,23 +103,25 @@ const NavPrimary = ({ input }: Props) => {
 
             {item._type === "menuItem" && isMenuItemWithSubmenu(item) && (
               <ul className='sub-menu'>
-                {item.subMenu?.map((subItem, j) => (
-                  <li key={j}>
-                    {subItem._type === "linkInternal" && (
-                      <Link href={_linkResolver(subItem.link)}>
-                        {_localizeField(subItem.label)}
-                      </Link>
-                    )}
-                    {subItem._type === "linkExternal" && (
-                      <a
-                        href={subItem.link}
-                        target='_blank'
-                        rel='noopener noreferrer'>
-                        {subItem.label}
-                      </a>
-                    )}
-                  </li>
-                ))}
+                {item.subMenu?.map(
+                  (subItem: LinkInternal | LinkExternal, i) => (
+                    <li key={i}>
+                      {subItem._type === "linkInternal" && (
+                        <Link href={_linkResolver(subItem.link)}>
+                          {_localizeField(subItem.label)}
+                        </Link>
+                      )}
+                      {subItem._type === "linkExternal" && (
+                        <a
+                          href={subItem.link}
+                          target='_blank'
+                          rel='noopener noreferrer'>
+                          {subItem.label}
+                        </a>
+                      )}
+                    </li>
+                  ),
+                )}
               </ul>
             )}
           </li>

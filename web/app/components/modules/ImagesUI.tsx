@@ -1,8 +1,8 @@
 import React from "react";
 import clsx from "clsx";
-import { ImagesUI } from "@/app/types/schema";
 import Figure from "../ui/Figure";
 import AOS from "../ui/AOS";
+import { ImagesUI } from "@/app/types/sanity.types";
 // import PreJson from "../ui/PreJson";
 // import portableTextComponents from "@/app/sanity-api/portableTextComponents";
 // import { PortableText } from "@portabletext/react";

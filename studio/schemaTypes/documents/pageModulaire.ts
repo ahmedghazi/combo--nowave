@@ -46,6 +46,7 @@ export default defineType({
       title: 'Soustitre',
       group: 'editorial',
       description: 'Visible dans les listes page, dans la card (cartouche fond noir)',
+      hidden: true,
     }),
     defineField({
       name: 'slug',
@@ -70,6 +71,7 @@ export default defineType({
           type: 'keyVal',
         },
       ],
+      hidden: true,
       group: 'editorial',
     }),
     defineField({
@@ -96,6 +98,8 @@ export default defineType({
       type: 'localeString',
       title: 'Extrait',
       group: 'editorial',
+      description: 'Visible sur les listes page, dans la card ',
+      hidden: true,
     }),
     defineField({
       name: 'modules',

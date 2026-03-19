@@ -1,20 +1,9 @@
-import {
-  Figure,
-  LocaleString,
-  LocaleText,
-  PageModulaire,
-  Studio,
-} from "@/app/types/schema";
-import React, { MouseEvent, useEffect } from "react";
+import React from "react";
 import FigureUI from "./Figure";
-import {
-  _linkResolver,
-  _localizeField,
-  _localizeText,
-} from "@/app/sanity-api/utils";
+import { _linkResolver, _localizeField } from "@/app/sanity-api/utils";
 import AOS from "./AOS";
-import { subscribe } from "pubsub-js";
 import Link from "next/link";
+import { PageModulaire } from "@/app/types/sanity.types";
 
 type Props = {
   input: PageModulaire;

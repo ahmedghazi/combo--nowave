@@ -1,13 +1,13 @@
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import clsx from "clsx";
-import { TextImageUI } from "@/app/types/schema";
 import { SanityImageAsset } from "sanity-codegen";
 import AOS from "../ui/AOS";
 import Image from "next/image";
 import { _localizeField } from "@/app/sanity-api/utils";
 import portableTextComponents from "@/app/sanity-api/portableTextComponents";
 import { urlFor } from "@/app/sanity-api/sanity-utils";
+import { TextImageUI } from "@/app/types/sanity.types";
 
 type Props = {
   input: TextImageUI;
@@ -40,20 +40,20 @@ const ModuleTextImageUI = ({ input }: Props) => {
           </div>
           <div className='col-md-6 col-xs-12'>
             <div className='col-media'>
-              {image && image.image && (
+              {image && image.image && image.image?.asset && (
                 // <AOS>
                 <Image
                   src={urlFor(image.image?.asset, 2000)}
-                  width={image.image.asset?.metadata?.dimensions.width || 2000}
+                  width={image.image.asset?.metadata?.dimensions?.width || 2000}
                   height={
-                    image.image.asset?.metadata?.dimensions.height || 2000
+                    image.image.asset?.metadata?.dimensions?.height || 2000
                   }
                   alt={image.caption || ""}
                   sizes='100vw'
                   style={{
                     width: "100%",
                     height: "100%",
-                    aspectRatio: `${image.image.asset?.metadata?.dimensions.width} / ${image.image.asset?.metadata?.dimensions.height}`,
+                    aspectRatio: `${image.image.asset?.metadata?.dimensions?.width} / ${image.image.asset?.metadata?.dimensions?.height}`,
                     // objectFit: "cover",
                   }}
                   blurDataURL={image.image.asset?.metadata?.lqip}

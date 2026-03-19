@@ -12,13 +12,12 @@ import TimelineControls from "./TimelineControls";
 import "./index.scss";
 import Figure from "../Figure";
 import { SanityImageAsset } from "sanity-codegen";
-import { SanityReference } from "@/app/types/schema";
 // import { subscribe } from "pubsub-js";
 
 type InputProps = {
   url: string;
   autoplay?: boolean;
-  thumbnail?: SanityImageAsset | SanityReference<SanityImageAsset> | any;
+  thumbnail?: SanityImageAsset | any;
   aspectRatio?: string;
 };
 
@@ -55,9 +54,9 @@ const VideoWrapper: React.FC<InputProps> = ({
   thumbnail,
   aspectRatio = "16 / 9",
 }) => {
-  initialVideoState.playing = autoplay;
-  initialVideoState.volume = autoplay ? 0 : 1;
-  initialVideoState.muted = autoplay;
+  // initialVideoState.playing = autoplay;
+  // initialVideoState.volume = autoplay ? 0 : 1;
+  // initialVideoState.muted = autoplay;
 
   const [ready, setReady] = useState<boolean>(false);
   const [started, setStarted] = useState<boolean>(false);

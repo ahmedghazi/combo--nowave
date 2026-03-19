@@ -1,8 +1,8 @@
-import { SliderCardImageTextUI } from "@/app/types/schema";
 import { _localizeField } from "@/app/sanity-api/utils";
 import React from "react";
 import Slider from "../ui/slick-slider";
 import Card from "../ui/Card";
+import { SliderCardImageTextUI } from "@/app/types/sanity.types";
 
 type Props = {
   input: SliderCardImageTextUI;

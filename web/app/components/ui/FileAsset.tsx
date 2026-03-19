@@ -18,7 +18,7 @@ const FileAsset = ({ fileAsset, className, children }: Props) => {
   return (
     <div className={className}>
       {/* Use the fileUrl for your file needs */}
-      {typeof children === "function" ? children(fileUrl) : children}
+      {/* {typeof children === "function" ? children(fileUrl) : children} */}
     </div>
   );
 };

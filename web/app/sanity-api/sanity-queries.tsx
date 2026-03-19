@@ -1,7 +1,8 @@
 import { groq } from "next-sanity";
 import { sanityFetch } from "./sanity.client";
-import { Home, PageModulaire, Settings } from "../types/schema";
+// import { Home, PageModulaire, Settings } from "../types/schema";
 import { blockContent, modules, seo } from "./fragments";
+import { Home, PageModulaire, Settings } from "../types/sanity.types";
 // import { revalidatePath } from "next/cache";
 
 /*****************************************************************************************************

@@ -10,6 +10,7 @@ import {
 } from "../types/sanity.types";
 
 type Props = {
+  fallback?: boolean;
   items: Array<{
     asset?: SanityFileAssetReference;
     media?: unknown;
@@ -25,7 +26,7 @@ type Props = {
   };
 };
 
-const LogoAnimated = ({ items }: Props) => {
+const LogoAnimated = ({ items, fallback = false, logo }: Props) => {
   const [randomLogo, setRandomLogo] = useState<string>("");
   const hasInitialized = useRef(false);
 
@@ -35,7 +36,6 @@ const LogoAnimated = ({ items }: Props) => {
     if (!hasInitialized.current || items) {
       if (items && items.length > 0) {
         const randomIndex = Math.floor(Math.random() * items.length);
-        console.log("randomIndex", randomIndex);
         if (items[randomIndex] && items[randomIndex].asset) {
           // Use the async urlForFile function
           urlForFile(items[randomIndex].asset).then((url) => {
@@ -54,7 +54,7 @@ const LogoAnimated = ({ items }: Props) => {
     <div className='logo-animated'>
       <div className='logo logo--nowave'>
         <Link href={"/"}>
-          {randomLogo ? (
+          {randomLogo && !fallback ? (
             <LottiePlayer file={randomLogo} loop={true} />
           ) : (
             <svg

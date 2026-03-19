@@ -1,4 +1,3 @@
-import { ListLieuUI } from "@/app/types/schema";
 import React from "react";
 import SummaryDetailFramer from "../ui/SummaryDetailFramer";
 import { _localizeField } from "@/app/sanity-api/utils";
@@ -6,13 +5,13 @@ import ContentModulaire from "../ContentModulaire";
 import AOS from "../ui/AOS";
 
 type Props = {
-  input: ListLieuUI;
+  input: any;
 };
 
 const ModuleListLieuUI = ({ input }: Props) => {
   return (
     <section className='module module--list-lieu-ui' id={input.slug?.current}>
-      {input.items?.map((item, i) => (
+      {input.items?.map((item: any, i: number) => (
         <div className='lieu' key={i}>
           <SummaryDetailFramer
             summary={

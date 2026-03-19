@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Figure, HeroSplitScrollUI, HeroSplitUI } from "@/app/types/schema";
 import { urlFor } from "@/app/sanity-api/sanity-utils";
 import Image from "next/image";
 import { _localizeField } from "@/app/sanity-api/utils";
 import AOS from "../ui/AOS";
 import useDeviceDetect from "@/app/hooks/useDeviceDetect";
+import { HeroSplitUI } from "@/app/types/sanity.types";
 
 type Props = {
   input: HeroSplitUI;
@@ -20,15 +20,15 @@ const ModuleHeroSplitUI = ({ input }: Props) => {
   return (
     <section className='module module--hero-split-ui'>
       <div className='grid grid-cols-2'>
-        {itemsLeft && itemsLeft.image && (
+        {itemsLeft && itemsLeft.image && itemsLeft.image.asset && (
           <div className='item'>
             <div className='inner'>
               <Image
                 src={urlFor(itemsLeft?.image.asset, 1500)}
                 alt={itemsLeft.caption || ""}
                 priority={true}
-                width={itemsLeft?.image.asset.metadata.dimensions.width}
-                height={itemsLeft?.image.asset.metadata.dimensions.height}
+                width={itemsLeft?.image.asset.metadata?.dimensions?.width}
+                height={itemsLeft?.image.asset.metadata?.dimensions?.height}
                 blurDataURL={itemsLeft?.image.asset?.metadata?.lqip}
                 placeholder='blur'
               />
@@ -40,15 +40,15 @@ const ModuleHeroSplitUI = ({ input }: Props) => {
             </div>
           </div>
         )}
-        {itemsRight && itemsRight.image && (
+        {itemsRight && itemsRight.image && itemsRight.image.asset && (
           <div className='item'>
             <div className='inner'>
               <Image
                 src={urlFor(itemsRight?.image.asset, 1500)}
                 alt={itemsRight.caption || ""}
                 priority={true}
-                width={itemsRight?.image.asset.metadata.dimensions.width}
-                height={itemsRight?.image.asset.metadata.dimensions.height}
+                width={itemsRight?.image.asset.metadata?.dimensions?.width}
+                height={itemsRight?.image.asset.metadata?.dimensions?.height}
                 blurDataURL={itemsRight?.image.asset?.metadata?.lqip}
                 placeholder='blur'
               />

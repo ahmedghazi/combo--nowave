@@ -1,4 +1,3 @@
-import { SanityKeyedReference, Tag } from "@/app/types/schema";
 import { _linkResolver, _localizeField } from "@/app/sanity-api/utils";
 import React, { useState } from "react";
 import AOS from "../ui/AOS";

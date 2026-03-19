@@ -41,6 +41,7 @@
     "@types/pubsub-js": "^1.8.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-lottie": "^1.2.10",
     "@types/styled-components": "^5.1.36",
     "@types/throttle-debounce": "^5.0.2",
     "eslint": "^9",

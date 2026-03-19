@@ -6,7 +6,7 @@ import ModuleTextUI from "./TextUI";
 import ModuleContactsUI from "./ContactsUI";
 import ModuleListCardImageTextUI from "./ListCardImageTextUI";
 import ModuleListLieuUI from "./ListLieuUI";
-import ModuleListStudioUI from "./ListStudioUI";
+// import ModuleListStudioUI from "./ListStudioUI";
 import ModuleListLModulaireUI from "./ListLModulaireUI";
 import ModuleImageUI from "./ImageUI";
 import ModuleMarqueeUI from "./MarqueeUI";
@@ -50,12 +50,12 @@ const Modules = ({ modules }: ModulesList) => {
           return <ModuleContactsUI key={module._key} input={module} />;
         case "listCardImageTextUI":
           return <ModuleListCardImageTextUI key={module._key} input={module} />;
-        case "listLieuUI":
-          return <ModuleListLieuUI key={module._key} input={module} />;
-        case "listStudioUI":
-          return <ModuleListStudioUI key={module._key} input={module} />;
-        case "listLModulaireUI":
-          return <ModuleListLModulaireUI key={module._key} input={module} />;
+        // case "listLieuUI":
+        //   return <ModuleListLieuUI key={module._key} input={module} />;
+        // case "listStudioUI":
+        //   return <ModuleListStudioUI key={module._key} input={module} />;
+        // case "listLModulaireUI":
+        //   return <ModuleListLModulaireUI key={module._key} input={module} />;
         case "listTalentsUI":
           return <ModuleListTalentsUI key={module._key} input={module} />;
         case "listPageUI":
