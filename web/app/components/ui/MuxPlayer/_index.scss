@@ -38,8 +38,9 @@
     }
     .muted {
       position: absolute;
-      right: var(--spacing-50);
-      bottom: calc(1em + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: var(--spacing-50);
       color: white;
     }
   }

@@ -6,16 +6,23 @@ type Props = {
   playbackId: string;
   title?: string;
   controls?: boolean;
+  paused?: boolean;
 };
 
-const MuxVideoPlayer = ({ playbackId, title, controls }: Props) => {
+const MuxVideoPlayer = ({ playbackId, title, controls, paused }: Props) => {
   const [ready, setReady] = useState<boolean>(false);
   const [progress, setProgress] = useState<number>(0);
   const [muted, setMuted] = useState<boolean>(true);
+  const [refresh, setRefresh] = useState<boolean>(true);
 
   useEffect(() => {
     setReady(true);
   }, []);
+
+  useEffect(() => {
+    // console.log("progress", progress);
+    // setRefresh(!refresh);
+  }, [progress]);
 
   return (
     <div className='mux-player-container' onClick={() => setMuted(!muted)}>
@@ -26,12 +33,14 @@ const MuxVideoPlayer = ({ playbackId, title, controls }: Props) => {
             metadata={title ? { video_title: title } : undefined}
             autoPlay='muted'
             muted={muted}
+            paused={paused}
             loop
-            onProgress={(event: CustomEvent) => {
+            onTimeUpdate={(event: CustomEvent) => {
               const target = event.target as HTMLMediaElement;
               const currentTime = target?.currentTime;
               const duration = target?.duration;
-              if (duration > 0) setProgress(currentTime / duration);
+              console.log("currentTime", currentTime, "duration", duration);
+              if (currentTime > 0) setProgress(currentTime / duration);
             }}
           />
           {controls && <Controls progress={progress} muted={muted} />}

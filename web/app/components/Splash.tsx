@@ -17,26 +17,26 @@ const Splash = ({ settings }: Props) => {
   const [del, setDel] = useState(false);
   const { userHistory } = usePageContext();
   const { logosLottie, logo, baseline } = settings;
-  // const canDisplay = useMemo(
-  //   () => userHistory.length === 1 && pathname === "/",
-  //   [userHistory, pathname],
-  // );
+  const canDisplay = useMemo(
+    () => userHistory.length === 1 && pathname === "/",
+    [userHistory, pathname],
+  );
 
-  // useEffect(() => {
-  //   if (!canDisplay) return;
-  //   setTimeout(() => {
-  //     setCollapse(true);
-  //   }, 2000);
-  // }, [canDisplay]);
+  useEffect(() => {
+    if (!canDisplay) return;
+    setTimeout(() => {
+      setCollapse(true);
+    }, 2000);
+  }, [canDisplay]);
 
-  // useEffect(() => {
-  //   if (collapse) {
-  //     window.scrollTo(0, window.innerHeight);
-  //     setTimeout(() => {
-  //       setDel(true);
-  //     }, 1000);
-  //   }
-  // }, [collapse]);
+  useEffect(() => {
+    if (collapse) {
+      window.scrollTo(0, window.innerHeight);
+      setTimeout(() => {
+        setDel(true);
+      }, 1000);
+    }
+  }, [collapse]);
 
   return pathname === "/" ? (
     <div

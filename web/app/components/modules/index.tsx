@@ -24,6 +24,7 @@ import ModuleListTalentsUI from "./ListTalentsUI";
 import ModuleHeroVideoUI from "./HeroVideoUI";
 import ModuleTitleUI from "./TitleUI";
 import { ModulesList } from "@/app/types/extra-types";
+import ModuleSliderHeroVideoUI from "./SliderHeroVideoUI";
 
 const Modules = ({ modules }: ModulesList) => {
   // console.log(modules);
@@ -42,6 +43,8 @@ const Modules = ({ modules }: ModulesList) => {
           return <ModuleHeroUI key={module._key} input={module} />;
         case "heroVideoUI":
           return <ModuleHeroVideoUI key={module._key} input={module} />;
+        case "sliderHeroVideoUI":
+          return <ModuleSliderHeroVideoUI key={module._key} input={module} />;
         case "imagesUI":
           return <ModuleImagesUI key={module._key} input={module} />;
         case "logosUI":

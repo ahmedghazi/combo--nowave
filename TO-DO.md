@@ -5,3 +5,4 @@
   <!-- - nav locale -->
   <!-- - footer -->
 - page talent
+- ModuleSliderHeroVideoUI play only visible slide

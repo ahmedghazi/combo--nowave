@@ -6,10 +6,11 @@ type Props = {
 };
 
 const Controls = ({ progress, muted }: Props) => {
-  const style = {
-    transform: `scaleX(${progress})`,
-    transformOrigin: "left",
-  };
+  // const style = {
+  //   transform: `scaleX(${progress})`,
+  //   transformOrigin: "left",
+  // };
+  console.log(progress);
   return (
     <div className='controls'>
       <div className='timeline'>
@@ -18,6 +19,7 @@ const Controls = ({ progress, muted }: Props) => {
           style={{ transform: `scaleX(${progress})`, transformOrigin: "left" }}
         />
       </div>
+      {/* <div className='progress'>{progress}</div> */}
       <div className='muted'>{muted ? "Muted" : ""}</div>
     </div>
   );

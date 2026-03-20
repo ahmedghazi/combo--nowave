@@ -7,6 +7,8 @@ import { _date, _linkResolver, _localizeField } from "@/app/sanity-api/utils";
 import Link from "next/link";
 import MuxVideoPlayer from "../ui/MuxPlayer";
 import useDeviceDetect from "@/app/hooks/useDeviceDetect";
+import Figure from "../ui/Figure";
+import HeroVideoComponent from "../ui/HeroVideo";
 // import MuxVideoPlayer from "../ui/MuxVideo";
 
 type Props = {
@@ -20,27 +22,12 @@ const ModuleHeroVideoUI = ({ input }: Props) => {
   const playbackId = isMobile
     ? videoPortrait?.asset?.playbackId
     : videoLandscape?.asset?.playbackId;
+
   return (
     <section className='module module--hero-video-ui'>
-      {!videoLandscape && !videoPortrait && image && image.asset && (
-        // <AOS>
-        <Image
-          src={urlFor(image.asset, 2000)}
-          width={image.asset?.metadata?.dimensions?.width || 2000}
-          height={image.asset?.metadata?.dimensions?.height || 2000}
-          alt={_localizeField(title) || ""}
-          sizes='100vw'
-          style={{
-            width: "100%",
-            height: "100%",
-            aspectRatio: `${image.asset?.metadata?.dimensions?.width} / ${image.asset?.metadata?.dimensions?.height}`,
-            // objectFit: "cover",
-          }}
-          blurDataURL={image.asset?.metadata?.lqip}
-          // placeholder='blur'
-          // placeholder={logo.asset?.metadata?.lqip}
-        />
-        // </AOS>
+      <HeroVideoComponent input={input} />
+      {/* {!videoLandscape && !videoPortrait && image && image.asset && (
+        <Figure asset={image.asset} alt={_localizeField(title)} />
       )}
       {playbackId && (
         <MuxVideoPlayer
@@ -75,7 +62,7 @@ const ModuleHeroVideoUI = ({ input }: Props) => {
           </div>
           <div className='date'>{_date(date)}</div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

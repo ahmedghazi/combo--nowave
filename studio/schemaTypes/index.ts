@@ -31,6 +31,7 @@ import video from './objects/video'
 import figure from './objects/figure'
 import cardImageText from './objects/cardImageText'
 import summaryDetail from './objects/summaryDetail'
+import heroVideo from './objects/heroVideo'
 
 import heroUI from './objects/modules/heroUI'
 import textUI from './objects/modules/textUI'
@@ -55,6 +56,7 @@ import logosUI from './objects/modules/logosUI'
 import heroVideoUI from './objects/modules/heroVideoUI'
 import listTalentsUI from './objects/modules/listTalentsUI'
 import titleUI from './objects/modules/titleUI'
+import sliderHeroVideoUI from './objects/modules/sliderHeroVideoUI'
 
 export const schemaTypes = [
   home,
@@ -89,6 +91,7 @@ export const schemaTypes = [
   figure,
   cardImageText,
   summaryDetail,
+  heroVideo,
 
   titleUI,
   textUI,
@@ -113,5 +116,6 @@ export const schemaTypes = [
   heroSplitUI,
   textImageUI,
   sliderCardImageTextUI,
+  sliderHeroVideoUI,
 ]
 export default schemaTypes

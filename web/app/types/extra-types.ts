@@ -16,6 +16,7 @@ import {
   MarqueeUI,
   SanityImageAsset,
   SliderCardImageTextUI,
+  SliderHeroVideoUI,
   SplitImageTextUI,
   TextImageUI,
   TextsUI,
@@ -51,6 +52,9 @@ export interface ModulesList {
     | ({
         _key: string;
       } & HeroVideoUI)
+    | ({
+        _key: string;
+      } & SliderHeroVideoUI)
     | ({
         _key: string;
       } & ImageUI)

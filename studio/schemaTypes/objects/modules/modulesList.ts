@@ -5,6 +5,7 @@ export default [
   {type: 'textImageUI'},
   {type: 'heroUI'},
   {type: 'heroVideoUI'},
+  {type: 'sliderHeroVideoUI'},
   {type: 'imageUI'},
   {type: 'imagesUI'},
   {type: 'logosUI'},
@@ -17,10 +18,10 @@ export default [
   {type: 'listPageUI'},
 
   {type: 'marqueeUI'},
-  {type: 'splitImageTextUI'},
+  // {type: 'splitImageTextUI'},
   // {type: 'sliderUI'},
   {type: 'callOutUI'},
   {type: 'heroSplitScrollUI'},
   {type: 'heroSplitUI'},
-  {type: 'sliderCardImageTextUI'},
+  // {type: 'sliderCardImageTextUI'},
 ]

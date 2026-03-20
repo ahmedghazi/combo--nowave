@@ -15,6 +15,16 @@
 export declare const internalGroqTypeReferenceTo: unique symbol
 
 // Source: schema.json
+export type SliderHeroVideoUI = {
+  _type: 'sliderHeroVideoUI'
+  title?: string
+  items?: Array<
+    {
+      _key: string
+    } & HeroVideo
+  >
+}
+
 export type SliderCardImageTextUI = {
   _type: 'sliderCardImageTextUI'
   title?: LocaleString
@@ -26,6 +36,18 @@ export type SliderCardImageTextUI = {
       _key: string
     } & CardImageText
   >
+}
+
+export type Slug = {
+  _type: 'slug'
+  current?: string
+  source?: string
+}
+
+export type LocaleString = {
+  _type: 'localeString'
+  fr?: string
+  en?: string
 }
 
 export type TextImageUI = {
@@ -119,6 +141,12 @@ export type SplitImageTextUI = {
   title?: LocaleString
   slug?: Slug
   text?: LocaleBlockContent
+}
+
+export type LocaleBlockContent = {
+  _type: 'localeBlockContent'
+  fr?: BlockContent
+  en?: BlockContent
 }
 
 export type MarqueeUI = {
@@ -281,6 +309,23 @@ export type TitleUI = {
   foregroundColor?: string
 }
 
+export type HeroVideo = {
+  _type: 'heroVideo'
+  title?: LocaleString
+  videoLandscape?: MuxVideo
+  videoPortrait?: MuxVideo
+  image?: {
+    asset?: SanityImageAssetReference
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  brand?: string
+  talent?: TalentReference
+  date?: string
+}
+
 export type SummaryDetail = {
   _type: 'summaryDetail'
   summary?: LocaleString
@@ -412,12 +457,6 @@ export type LinkModal = {
   target?: 'modal-works'
 }
 
-export type LocaleString = {
-  _type: 'localeString'
-  fr?: string
-  en?: string
-}
-
 export type HomeReference = Home
 
 export type LinkInternal = {
@@ -481,12 +520,6 @@ export type BlockContent = Array<
     } & Embed)
 >
 
-export type LocaleBlockContent = {
-  _type: 'localeBlockContent'
-  fr?: BlockContent
-  en?: BlockContent
-}
-
 export type LocaleText = {
   _type: 'localeText'
   fr?: string
@@ -501,12 +534,6 @@ export type Tag = {
   _rev: string
   title?: LocaleString
   slug?: Slug
-}
-
-export type Slug = {
-  _type: 'slug'
-  current?: string
-  source?: string
 }
 
 export type Studio = {
@@ -574,6 +601,9 @@ export type Lieu = {
       } & HeroVideoUI)
     | ({
         _key: string
+      } & SliderHeroVideoUI)
+    | ({
+        _key: string
       } & ImageUI)
     | ({
         _key: string
@@ -598,9 +628,6 @@ export type Lieu = {
       } & MarqueeUI)
     | ({
         _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
       } & CallOutUI)
     | ({
         _key: string
@@ -608,9 +635,6 @@ export type Lieu = {
     | ({
         _key: string
       } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
   >
 }
 
@@ -722,6 +746,9 @@ export type Landing = {
       } & HeroVideoUI)
     | ({
         _key: string
+      } & SliderHeroVideoUI)
+    | ({
+        _key: string
       } & ImageUI)
     | ({
         _key: string
@@ -746,9 +773,6 @@ export type Landing = {
       } & MarqueeUI)
     | ({
         _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
       } & CallOutUI)
     | ({
         _key: string
@@ -756,9 +780,6 @@ export type Landing = {
     | ({
         _key: string
       } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
   >
 }
 
@@ -796,6 +817,9 @@ export type Home = {
       } & HeroVideoUI)
     | ({
         _key: string
+      } & SliderHeroVideoUI)
+    | ({
+        _key: string
       } & ImageUI)
     | ({
         _key: string
@@ -820,9 +844,6 @@ export type Home = {
       } & MarqueeUI)
     | ({
         _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
       } & CallOutUI)
     | ({
         _key: string
@@ -830,9 +851,6 @@ export type Home = {
     | ({
         _key: string
       } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
   >
 }
 
@@ -879,6 +897,9 @@ export type PageModulaire = {
       } & HeroVideoUI)
     | ({
         _key: string
+      } & SliderHeroVideoUI)
+    | ({
+        _key: string
       } & ImageUI)
     | ({
         _key: string
@@ -903,9 +924,6 @@ export type PageModulaire = {
       } & MarqueeUI)
     | ({
         _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
       } & CallOutUI)
     | ({
         _key: string
@@ -913,9 +931,6 @@ export type PageModulaire = {
     | ({
         _key: string
       } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
   >
 }
 
@@ -956,6 +971,9 @@ export type Talent = {
       } & HeroVideoUI)
     | ({
         _key: string
+      } & SliderHeroVideoUI)
+    | ({
+        _key: string
       } & ImageUI)
     | ({
         _key: string
@@ -980,9 +998,6 @@ export type Talent = {
       } & MarqueeUI)
     | ({
         _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
       } & CallOutUI)
     | ({
         _key: string
@@ -990,9 +1005,6 @@ export type Talent = {
     | ({
         _key: string
       } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
   >
 }
 
@@ -1201,7 +1213,10 @@ export type Geopoint = {
 }
 
 export type AllSanitySchemaTypes =
+  | SliderHeroVideoUI
   | SliderCardImageTextUI
+  | Slug
+  | LocaleString
   | TextImageUI
   | HeroSplitUI
   | HeroSplitScrollUI
@@ -1211,6 +1226,7 @@ export type AllSanitySchemaTypes =
   | SanityImageCrop
   | SanityImageHotspot
   | SplitImageTextUI
+  | LocaleBlockContent
   | MarqueeUI
   | PageModulaireReference
   | ListPageUI
@@ -1227,6 +1243,7 @@ export type AllSanitySchemaTypes =
   | TextsUI
   | TextUI
   | TitleUI
+  | HeroVideo
   | SummaryDetail
   | CardImageText
   | Figure
@@ -1241,15 +1258,12 @@ export type AllSanitySchemaTypes =
   | LinkIcon
   | LinkAnchor
   | LinkModal
-  | LocaleString
   | HomeReference
   | LinkInternal
   | LinkExternal
   | BlockContent
-  | LocaleBlockContent
   | LocaleText
   | Tag
-  | Slug
   | Studio
   | Lieu
   | SanityFileAssetReference

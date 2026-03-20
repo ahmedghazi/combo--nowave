@@ -12,1267 +12,1077 @@
  * ---------------------------------------------------------------------------------
  */
 
-export declare const internalGroqTypeReferenceTo: unique symbol
+export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type SliderHeroVideoUI = {
+  _type: "sliderHeroVideoUI";
+  title?: string;
+  items?: Array<{
+    _key: string;
+  } & HeroVideo>;
+};
+
 export type SliderCardImageTextUI = {
-  _type: 'sliderCardImageTextUI'
-  title?: LocaleString
-  slug?: Slug
-  gridSize?: number
-  autoplay?: boolean
-  items?: Array<
-    {
-      _key: string
-    } & CardImageText
-  >
-}
-
-export type TextImageUI = {
-  _type: 'textImageUI'
-  title?: LocaleString
-  direction?: '' | 'reverse'
-  text?: LocaleBlockContent
-  image?: Figure
-}
-
-export type HeroSplitUI = {
-  _type: 'heroSplitUI'
-  title?: string
-  itemsLeft?: Figure
-  itemsRight?: Figure
-}
-
-export type HeroSplitScrollUI = {
-  _type: 'heroSplitScrollUI'
-  title?: string
-  itemsLeft?: Array<
-    {
-      _key: string
-    } & Figure
-  >
-  itemsRight?: Array<
-    {
-      _key: string
-    } & Figure
-  >
-}
-
-export type SanityImageAssetReference = SanityImageAsset
-
-export type CallOutUI = {
-  _type: 'callOutUI'
-  title?: LocaleText
-  slug?: Slug
-  backgroundImage?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  links?: Array<
-    {
-      _key: string
-    } & LinkExternal
-  >
-}
-
-export type SliderUI = {
-  _type: 'sliderUI'
-  title?: string
-  images?: Array<{
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-    _key: string
-  }>
-}
-
-export type SanityImageCrop = {
-  _type: 'sanity.imageCrop'
-  top?: number
-  bottom?: number
-  left?: number
-  right?: number
-}
-
-export type SanityImageHotspot = {
-  _type: 'sanity.imageHotspot'
-  x?: number
-  y?: number
-  height?: number
-  width?: number
-}
-
-export type SplitImageTextUI = {
-  _type: 'splitImageTextUI'
-  image?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  title?: LocaleString
-  slug?: Slug
-  text?: LocaleBlockContent
-}
-
-export type MarqueeUI = {
-  _type: 'marqueeUI'
-  text?: string
-  foregroundColor?: string
-  backgroundColor?: string
-}
-
-export type PageModulaireReference = PageModulaire
-
-export type ListPageUI = {
-  _type: 'listPageUI'
-  title?: LocaleString
-  gridSize?: number
-  items?: Array<
-    {
-      _key: string
-    } & PageModulaireReference
-  >
-  cta?: LinkInternal
-}
-
-export type TagReference = Tag
-
-export type ListCardImageTextUI = {
-  _type: 'listCardImageTextUI'
-  title?: LocaleString
-  slug?: Slug
-  gridSize?: number
-  items?: Array<
-    {
-      _key: string
-    } & CardImageText
-  >
-  navTags?: Array<
-    {
-      _key: string
-    } & TagReference
-  >
-}
-
-export type TalentReference = Talent
-
-export type ListTalentsUI = {
-  _type: 'listTalentsUI'
-  title?: LocaleString
-  gridSize?: number
-  items?: Array<
-    {
-      _key: string
-    } & TalentReference
-  >
-  cta?: LinkInternal
-}
-
-export type ContactsUI = {
-  _type: 'contactsUI'
-  title?: LocaleString
-  items?: Array<
-    {
-      _key: string
-    } & LocaleBlockContent
-  >
-}
-
-export type LogosUI = {
-  _type: 'logosUI'
-  title?: LocaleString
-  items?: Array<
-    {
-      _key: string
-    } & Figure
-  >
-  backgroundColor?: string
-  foregroundColor?: string
-}
-
-export type HeroVideoUI = {
-  _type: 'heroVideoUI'
-  title?: LocaleString
-  videoLandscape?: MuxVideo
-  videoPortrait?: MuxVideo
-  image?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  brand?: string
-  talent?: TalentReference
-  date?: string
-}
-
-export type HeroUI = {
-  _type: 'heroUI'
-  title?: string
-  image?: Figure
-}
-
-export type ImagesUI = {
-  _type: 'imagesUI'
-  title?: string
-  items?: Array<
-    {
-      _key: string
-    } & Figure
-  >
-}
-
-export type ImageUI = {
-  _type: 'imageUI'
-  title?: string
-  image?: Figure
-}
-
-export type TextsUI = {
-  _type: 'textsUI'
-  look?: 'default' | 'offset'
-  title?: LocaleString
-  items?: Array<
-    {
-      _key: string
-    } & LocaleBlockContent
-  >
-  titleCentered?: boolean
-  backgroundImage?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  backgroundColor?: string
-  foregroundColor?: string
-}
-
-export type TextUI = {
-  _type: 'textUI'
-  look?: 'default' | 'columns' | 'offset'
-  title?: LocaleString
-  titleCentered?: boolean
-  text?: LocaleBlockContent
-  backgroundImage?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  backgroundColor?: string
-  foregroundColor?: string
-}
-
-export type TitleUI = {
-  _type: 'titleUI'
-  title?: LocaleString
-  backgroundColor?: string
-  foregroundColor?: string
-}
-
-export type SummaryDetail = {
-  _type: 'summaryDetail'
-  summary?: LocaleString
-  detail?: LocaleBlockContent
-}
-
-export type CardImageText = {
-  _type: 'cardImageText'
-  title?: LocaleString
-  tag?: LocaleString
-  tagsFilter?: Array<
-    {
-      _key: string
-    } & TagReference
-  >
-  text?: LocaleBlockContent
-  image?: Figure
-}
-
-export type Figure = {
-  _type: 'figure'
-  image?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  caption?: string
-}
-
-export type Video = {
-  _type: 'video'
-  url?: string
-  placeholder?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-}
-
-export type KeyValGroup = {
-  _type: 'keyValGroup'
-  title?: LocaleString
-  items?: Array<
-    | ({
-        _key: string
-      } & KeyValSimple)
-    | ({
-        _key: string
-      } & KeyValText)
-  >
-}
-
-export type KeyValSimple = {
-  _type: 'keyValSimple'
-  key?: LocaleString
-  val?: LocaleString
-}
-
-export type KeyValText = {
-  _type: 'keyValText'
-  key?: LocaleString
-  val?: LocaleBlockContent
-}
-
-export type KeyVal = {
-  _type: 'keyVal'
-  key?: LocaleString
-  val?: string
-}
-
-export type Embed = {
-  _type: 'embed'
-  url?: string
-  iframe?: string
-}
-
-export type Seo = {
-  _type: 'seo'
-  metaTitle?: string
-  metaDescription?: string
-  metaImage?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-}
-
-export type MenuItem = {
-  _type: 'menuItem'
-  link?: LinkInternal
-  subMenu?: Array<
-    | ({
-        _key: string
-      } & LinkInternal)
-    | ({
-        _key: string
-      } & LinkExternal)
-  >
-}
-
-export type LinkIcon = {
-  _type: 'linkIcon'
-  label?: string
-  link?: string
-  icon?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-}
-
-export type LinkAnchor = {
-  _type: 'linkAnchor'
-  label?: string
-  target?: string
-}
-
-export type LinkModal = {
-  _type: 'linkModal'
-  label?: LocaleString
-  target?: 'modal-works'
-}
-
-export type LocaleString = {
-  _type: 'localeString'
-  fr?: string
-  en?: string
-}
-
-export type HomeReference = Home
-
-export type LinkInternal = {
-  _type: 'linkInternal'
-  label?: LocaleString
-  link?: HomeReference | PageModulaireReference | TalentReference
-  cta?: boolean
-}
-
-export type LinkExternal = {
-  _type: 'linkExternal'
-  label?: string
-  link?: string
-}
-
-export type BlockContent = Array<
-  | {
-      children?: Array<{
-        marks?: Array<string>
-        text?: string
-        _type: 'span'
-        _key: string
-      }>
-      style?: 'normal' | 'h2' | 'h3' | 'h2 text-2lg' | 'text-xl'
-      listItem?: 'bullet'
-      markDefs?: Array<
-        | {
-            reference?: HomeReference | PageModulaireReference | TalentReference
-            _type: 'linkInternalCta'
-            _key: string
-          }
-        | {
-            reference?: HomeReference | PageModulaireReference | TalentReference
-            _type: 'linkInternal'
-            _key: string
-          }
-        | {
-            href?: string
-            cta?: boolean
-            _type: 'linkExternal'
-            _key: string
-          }
-      >
-      level?: number
-      _type: 'block'
-      _key: string
-    }
-  | ({
-      _key: string
-    } & KeyValGroup)
-  | {
-      asset?: SanityImageAssetReference
-      media?: unknown
-      hotspot?: SanityImageHotspot
-      crop?: SanityImageCrop
-      _type: 'image'
-      _key: string
-    }
-  | ({
-      _key: string
-    } & Embed)
->
-
-export type LocaleBlockContent = {
-  _type: 'localeBlockContent'
-  fr?: BlockContent
-  en?: BlockContent
-}
-
-export type LocaleText = {
-  _type: 'localeText'
-  fr?: string
-  en?: string
-}
-
-export type Tag = {
-  _id: string
-  _type: 'tag'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: LocaleString
-  slug?: Slug
-}
+  _type: "sliderCardImageTextUI";
+  title?: LocaleString;
+  slug?: Slug;
+  gridSize?: number;
+  autoplay?: boolean;
+  items?: Array<{
+    _key: string;
+  } & CardImageText>;
+};
 
 export type Slug = {
-  _type: 'slug'
-  current?: string
-  source?: string
-}
+  _type: "slug";
+  current?: string;
+  source?: string;
+};
+
+export type LocaleString = {
+  _type: "localeString";
+  fr?: string;
+  en?: string;
+};
+
+export type TextImageUI = {
+  _type: "textImageUI";
+  title?: LocaleString;
+  direction?: "" | "reverse";
+  text?: LocaleBlockContent;
+  image?: Figure;
+};
+
+export type HeroSplitUI = {
+  _type: "heroSplitUI";
+  title?: string;
+  itemsLeft?: Figure;
+  itemsRight?: Figure;
+};
+
+export type HeroSplitScrollUI = {
+  _type: "heroSplitScrollUI";
+  title?: string;
+  itemsLeft?: Array<{
+    _key: string;
+  } & Figure>;
+  itemsRight?: Array<{
+    _key: string;
+  } & Figure>;
+};
+
+export type SanityImageAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+};
+
+export type CallOutUI = {
+  _type: "callOutUI";
+  title?: LocaleText;
+  slug?: Slug;
+  backgroundImage?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  links?: Array<{
+    _key: string;
+  } & LinkExternal>;
+};
+
+export type SliderUI = {
+  _type: "sliderUI";
+  title?: string;
+  images?: Array<{
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+};
+
+export type SanityImageCrop = {
+  _type: "sanity.imageCrop";
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
+export type SanityImageHotspot = {
+  _type: "sanity.imageHotspot";
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+};
+
+export type SplitImageTextUI = {
+  _type: "splitImageTextUI";
+  image?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  title?: LocaleString;
+  slug?: Slug;
+  text?: LocaleBlockContent;
+};
+
+export type LocaleBlockContent = {
+  _type: "localeBlockContent";
+  fr?: BlockContent;
+  en?: BlockContent;
+};
+
+export type MarqueeUI = {
+  _type: "marqueeUI";
+  text?: string;
+  foregroundColor?: string;
+  backgroundColor?: string;
+};
+
+export type PageModulaireReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "pageModulaire";
+};
+
+export type ListPageUI = {
+  _type: "listPageUI";
+  title?: LocaleString;
+  gridSize?: number;
+  items?: Array<{
+    _key: string;
+  } & PageModulaireReference>;
+  cta?: LinkInternal;
+};
+
+export type TagReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "tag";
+};
+
+export type ListCardImageTextUI = {
+  _type: "listCardImageTextUI";
+  title?: LocaleString;
+  slug?: Slug;
+  gridSize?: number;
+  items?: Array<{
+    _key: string;
+  } & CardImageText>;
+  navTags?: Array<{
+    _key: string;
+  } & TagReference>;
+};
+
+export type TalentReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "talent";
+};
+
+export type ListTalentsUI = {
+  _type: "listTalentsUI";
+  title?: LocaleString;
+  gridSize?: number;
+  items?: Array<{
+    _key: string;
+  } & TalentReference>;
+  cta?: LinkInternal;
+};
+
+export type ContactsUI = {
+  _type: "contactsUI";
+  title?: LocaleString;
+  items?: Array<{
+    _key: string;
+  } & LocaleBlockContent>;
+};
+
+export type LogosUI = {
+  _type: "logosUI";
+  title?: LocaleString;
+  items?: Array<{
+    _key: string;
+  } & Figure>;
+  backgroundColor?: string;
+  foregroundColor?: string;
+};
+
+export type HeroVideoUI = {
+  _type: "heroVideoUI";
+  title?: LocaleString;
+  videoLandscape?: MuxVideo;
+  videoPortrait?: MuxVideo;
+  image?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  brand?: string;
+  talent?: TalentReference;
+  date?: string;
+};
+
+export type HeroUI = {
+  _type: "heroUI";
+  title?: string;
+  image?: Figure;
+};
+
+export type ImagesUI = {
+  _type: "imagesUI";
+  title?: string;
+  items?: Array<{
+    _key: string;
+  } & Figure>;
+};
+
+export type ImageUI = {
+  _type: "imageUI";
+  title?: string;
+  image?: Figure;
+};
+
+export type TextsUI = {
+  _type: "textsUI";
+  look?: "default" | "offset";
+  title?: LocaleString;
+  items?: Array<{
+    _key: string;
+  } & LocaleBlockContent>;
+  titleCentered?: boolean;
+  backgroundImage?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  backgroundColor?: string;
+  foregroundColor?: string;
+};
+
+export type TextUI = {
+  _type: "textUI";
+  look?: "default" | "columns" | "offset";
+  title?: LocaleString;
+  titleCentered?: boolean;
+  text?: LocaleBlockContent;
+  backgroundImage?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  backgroundColor?: string;
+  foregroundColor?: string;
+};
+
+export type TitleUI = {
+  _type: "titleUI";
+  title?: LocaleString;
+  backgroundColor?: string;
+  foregroundColor?: string;
+};
+
+export type HeroVideo = {
+  _type: "heroVideo";
+  title?: LocaleString;
+  videoLandscape?: MuxVideo;
+  videoPortrait?: MuxVideo;
+  image?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  brand?: string;
+  talent?: TalentReference;
+  date?: string;
+};
+
+export type SummaryDetail = {
+  _type: "summaryDetail";
+  summary?: LocaleString;
+  detail?: LocaleBlockContent;
+};
+
+export type CardImageText = {
+  _type: "cardImageText";
+  title?: LocaleString;
+  tag?: LocaleString;
+  tagsFilter?: Array<{
+    _key: string;
+  } & TagReference>;
+  text?: LocaleBlockContent;
+  image?: Figure;
+};
+
+export type Figure = {
+  _type: "figure";
+  image?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  caption?: string;
+};
+
+export type Video = {
+  _type: "video";
+  url?: string;
+  placeholder?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type KeyValGroup = {
+  _type: "keyValGroup";
+  title?: LocaleString;
+  items?: Array<{
+    _key: string;
+  } & KeyValSimple | {
+    _key: string;
+  } & KeyValText>;
+};
+
+export type KeyValSimple = {
+  _type: "keyValSimple";
+  key?: LocaleString;
+  val?: LocaleString;
+};
+
+export type KeyValText = {
+  _type: "keyValText";
+  key?: LocaleString;
+  val?: LocaleBlockContent;
+};
+
+export type KeyVal = {
+  _type: "keyVal";
+  key?: LocaleString;
+  val?: string;
+};
+
+export type Embed = {
+  _type: "embed";
+  url?: string;
+  iframe?: string;
+};
+
+export type Seo = {
+  _type: "seo";
+  metaTitle?: string;
+  metaDescription?: string;
+  metaImage?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type MenuItem = {
+  _type: "menuItem";
+  link?: LinkInternal;
+  subMenu?: Array<{
+    _key: string;
+  } & LinkInternal | {
+    _key: string;
+  } & LinkExternal>;
+};
+
+export type LinkIcon = {
+  _type: "linkIcon";
+  label?: string;
+  link?: string;
+  icon?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type LinkAnchor = {
+  _type: "linkAnchor";
+  label?: string;
+  target?: string;
+};
+
+export type LinkModal = {
+  _type: "linkModal";
+  label?: LocaleString;
+  target?: "modal-works";
+};
+
+export type HomeReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "home";
+};
+
+export type LinkInternal = {
+  _type: "linkInternal";
+  label?: LocaleString;
+  link?: HomeReference | PageModulaireReference | TalentReference;
+  cta?: boolean;
+};
+
+export type LinkExternal = {
+  _type: "linkExternal";
+  label?: string;
+  link?: string;
+};
+
+export type BlockContent = Array<{
+  children?: Array<{
+    marks?: Array<string>;
+    text?: string;
+    _type: "span";
+    _key: string;
+  }>;
+  style?: "normal" | "h2" | "h3" | "h2 text-2lg" | "text-xl";
+  listItem?: "bullet";
+  markDefs?: Array<{
+    reference?: HomeReference | PageModulaireReference | TalentReference;
+    _type: "linkInternalCta";
+    _key: string;
+  } | {
+    reference?: HomeReference | PageModulaireReference | TalentReference;
+    _type: "linkInternal";
+    _key: string;
+  } | {
+    href?: string;
+    cta?: boolean;
+    _type: "linkExternal";
+    _key: string;
+  }>;
+  level?: number;
+  _type: "block";
+  _key: string;
+} | {
+  _key: string;
+} & KeyValGroup | {
+  asset?: SanityImageAssetReference;
+  media?: unknown;
+  hotspot?: SanityImageHotspot;
+  crop?: SanityImageCrop;
+  _type: "image";
+  _key: string;
+} | {
+  _key: string;
+} & Embed>;
+
+export type LocaleText = {
+  _type: "localeText";
+  fr?: string;
+  en?: string;
+};
+
+export type Tag = {
+  _id: string;
+  _type: "tag";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: LocaleString;
+  slug?: Slug;
+};
 
 export type Studio = {
-  _id: string
-  _type: 'studio'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  seo?: Seo
-  title?: LocaleString
-  slug?: Slug
-  subTitle?: string
-  location?: string
-  imageCover?: Figure
-  imageHero?: Figure
-  SliderHero?: Array<
-    {
-      _key: string
-    } & Figure
-  >
-  excerpt?: LocaleString
-  text?: LocaleBlockContent
-  infos?: Array<
-    {
-      _key: string
-    } & SummaryDetail
-  >
-}
+  _id: string;
+  _type: "studio";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  seo?: Seo;
+  title?: LocaleString;
+  slug?: Slug;
+  subTitle?: string;
+  location?: string;
+  imageCover?: Figure;
+  imageHero?: Figure;
+  SliderHero?: Array<{
+    _key: string;
+  } & Figure>;
+  excerpt?: LocaleString;
+  text?: LocaleBlockContent;
+  infos?: Array<{
+    _key: string;
+  } & SummaryDetail>;
+};
 
 export type Lieu = {
-  _id: string
-  _type: 'lieu'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  seo?: Seo
-  title?: LocaleString
-  slug?: Slug
-  subTitle?: string
+  _id: string;
+  _type: "lieu";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  seo?: Seo;
+  title?: LocaleString;
+  slug?: Slug;
+  subTitle?: string;
   imageCover?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  modules?: Array<
-    | ({
-        _key: string
-      } & TitleUI)
-    | ({
-        _key: string
-      } & TextUI)
-    | ({
-        _key: string
-      } & TextsUI)
-    | ({
-        _key: string
-      } & TextImageUI)
-    | ({
-        _key: string
-      } & HeroUI)
-    | ({
-        _key: string
-      } & HeroVideoUI)
-    | ({
-        _key: string
-      } & ImageUI)
-    | ({
-        _key: string
-      } & ImagesUI)
-    | ({
-        _key: string
-      } & LogosUI)
-    | ({
-        _key: string
-      } & ContactsUI)
-    | ({
-        _key: string
-      } & ListCardImageTextUI)
-    | ({
-        _key: string
-      } & ListTalentsUI)
-    | ({
-        _key: string
-      } & ListPageUI)
-    | ({
-        _key: string
-      } & MarqueeUI)
-    | ({
-        _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
-      } & CallOutUI)
-    | ({
-        _key: string
-      } & HeroSplitScrollUI)
-    | ({
-        _key: string
-      } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
-  >
-}
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  modules?: Array<{
+    _key: string;
+  } & TitleUI | {
+    _key: string;
+  } & TextUI | {
+    _key: string;
+  } & TextsUI | {
+    _key: string;
+  } & TextImageUI | {
+    _key: string;
+  } & HeroUI | {
+    _key: string;
+  } & HeroVideoUI | {
+    _key: string;
+  } & SliderHeroVideoUI | {
+    _key: string;
+  } & ImageUI | {
+    _key: string;
+  } & ImagesUI | {
+    _key: string;
+  } & LogosUI | {
+    _key: string;
+  } & ContactsUI | {
+    _key: string;
+  } & ListCardImageTextUI | {
+    _key: string;
+  } & ListTalentsUI | {
+    _key: string;
+  } & ListPageUI | {
+    _key: string;
+  } & MarqueeUI | {
+    _key: string;
+  } & CallOutUI | {
+    _key: string;
+  } & HeroSplitScrollUI | {
+    _key: string;
+  } & HeroSplitUI>;
+};
 
-export type SanityFileAssetReference = SanityFileAsset
+export type SanityFileAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+};
 
 export type Settings = {
-  _id: string
-  _type: 'settings'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  siteName?: string
-  baseline?: LocaleString
+  _id: string;
+  _type: "settings";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  siteName?: string;
+  baseline?: LocaleString;
   logosLottie?: Array<{
-    asset?: SanityFileAssetReference
-    media?: unknown
-    _type: 'file'
-    _key: string
-  }>
+    asset?: SanityFileAssetReference;
+    media?: unknown;
+    _type: "file";
+    _key: string;
+  }>;
   logo?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
   logoIcon?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  marqueeTopNav?: string
-  navPrimary?: Array<
-    | ({
-        _key: string
-      } & LinkInternal)
-    | ({
-        _key: string
-      } & LinkExternal)
-    | ({
-        _key: string
-      } & MenuItem)
-  >
-  footerDark?: boolean
-  navSecondary?: Array<
-    | ({
-        _key: string
-      } & LinkInternal)
-    | ({
-        _key: string
-      } & LinkExternal)
-  >
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  marqueeTopNav?: string;
+  navPrimary?: Array<{
+    _key: string;
+  } & LinkInternal | {
+    _key: string;
+  } & LinkExternal | {
+    _key: string;
+  } & MenuItem>;
+  footerDark?: boolean;
+  navSecondary?: Array<{
+    _key: string;
+  } & LinkInternal | {
+    _key: string;
+  } & LinkExternal>;
   comboLogo?: {
-    asset?: SanityImageAssetReference
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  footerInfos?: LocaleBlockContent
-  message404?: LocaleBlockContent
-  messageCookie?: LocaleBlockContent
-  legalsUrl?: LinkInternal
-  customCss?: string
-}
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  footerInfos?: LocaleBlockContent;
+  message404?: LocaleBlockContent;
+  messageCookie?: LocaleBlockContent;
+  legalsUrl?: LinkInternal;
+  customCss?: string;
+};
 
 export type Infos = {
-  _id: string
-  _type: 'infos'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  seo?: Seo
-  title?: LocaleString
-  slug?: Slug
-  chapo?: LocaleBlockContent
-  text?: LocaleBlockContent
-}
+  _id: string;
+  _type: "infos";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  seo?: Seo;
+  title?: LocaleString;
+  slug?: Slug;
+  chapo?: LocaleBlockContent;
+  text?: LocaleBlockContent;
+};
 
 export type Landing = {
-  _id: string
-  _type: 'landing'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  seo?: Seo
-  title?: LocaleString
-  slug?: Slug
-  modules?: Array<
-    | ({
-        _key: string
-      } & TitleUI)
-    | ({
-        _key: string
-      } & TextUI)
-    | ({
-        _key: string
-      } & TextsUI)
-    | ({
-        _key: string
-      } & TextImageUI)
-    | ({
-        _key: string
-      } & HeroUI)
-    | ({
-        _key: string
-      } & HeroVideoUI)
-    | ({
-        _key: string
-      } & ImageUI)
-    | ({
-        _key: string
-      } & ImagesUI)
-    | ({
-        _key: string
-      } & LogosUI)
-    | ({
-        _key: string
-      } & ContactsUI)
-    | ({
-        _key: string
-      } & ListCardImageTextUI)
-    | ({
-        _key: string
-      } & ListTalentsUI)
-    | ({
-        _key: string
-      } & ListPageUI)
-    | ({
-        _key: string
-      } & MarqueeUI)
-    | ({
-        _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
-      } & CallOutUI)
-    | ({
-        _key: string
-      } & HeroSplitScrollUI)
-    | ({
-        _key: string
-      } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
-  >
-}
+  _id: string;
+  _type: "landing";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  seo?: Seo;
+  title?: LocaleString;
+  slug?: Slug;
+  modules?: Array<{
+    _key: string;
+  } & TitleUI | {
+    _key: string;
+  } & TextUI | {
+    _key: string;
+  } & TextsUI | {
+    _key: string;
+  } & TextImageUI | {
+    _key: string;
+  } & HeroUI | {
+    _key: string;
+  } & HeroVideoUI | {
+    _key: string;
+  } & SliderHeroVideoUI | {
+    _key: string;
+  } & ImageUI | {
+    _key: string;
+  } & ImagesUI | {
+    _key: string;
+  } & LogosUI | {
+    _key: string;
+  } & ContactsUI | {
+    _key: string;
+  } & ListCardImageTextUI | {
+    _key: string;
+  } & ListTalentsUI | {
+    _key: string;
+  } & ListPageUI | {
+    _key: string;
+  } & MarqueeUI | {
+    _key: string;
+  } & CallOutUI | {
+    _key: string;
+  } & HeroSplitScrollUI | {
+    _key: string;
+  } & HeroSplitUI>;
+};
 
 export type Home = {
-  _id: string
-  _type: 'home'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  seo?: Seo
-  title?: LocaleString
-  subMenu?: Array<
-    {
-      _key: string
-    } & KeyVal
-  >
-  modules?: Array<
-    | ({
-        _key: string
-      } & TitleUI)
-    | ({
-        _key: string
-      } & TextUI)
-    | ({
-        _key: string
-      } & TextsUI)
-    | ({
-        _key: string
-      } & TextImageUI)
-    | ({
-        _key: string
-      } & HeroUI)
-    | ({
-        _key: string
-      } & HeroVideoUI)
-    | ({
-        _key: string
-      } & ImageUI)
-    | ({
-        _key: string
-      } & ImagesUI)
-    | ({
-        _key: string
-      } & LogosUI)
-    | ({
-        _key: string
-      } & ContactsUI)
-    | ({
-        _key: string
-      } & ListCardImageTextUI)
-    | ({
-        _key: string
-      } & ListTalentsUI)
-    | ({
-        _key: string
-      } & ListPageUI)
-    | ({
-        _key: string
-      } & MarqueeUI)
-    | ({
-        _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
-      } & CallOutUI)
-    | ({
-        _key: string
-      } & HeroSplitScrollUI)
-    | ({
-        _key: string
-      } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
-  >
-}
+  _id: string;
+  _type: "home";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  seo?: Seo;
+  title?: LocaleString;
+  subMenu?: Array<{
+    _key: string;
+  } & KeyVal>;
+  modules?: Array<{
+    _key: string;
+  } & TitleUI | {
+    _key: string;
+  } & TextUI | {
+    _key: string;
+  } & TextsUI | {
+    _key: string;
+  } & TextImageUI | {
+    _key: string;
+  } & HeroUI | {
+    _key: string;
+  } & HeroVideoUI | {
+    _key: string;
+  } & SliderHeroVideoUI | {
+    _key: string;
+  } & ImageUI | {
+    _key: string;
+  } & ImagesUI | {
+    _key: string;
+  } & LogosUI | {
+    _key: string;
+  } & ContactsUI | {
+    _key: string;
+  } & ListCardImageTextUI | {
+    _key: string;
+  } & ListTalentsUI | {
+    _key: string;
+  } & ListPageUI | {
+    _key: string;
+  } & MarqueeUI | {
+    _key: string;
+  } & CallOutUI | {
+    _key: string;
+  } & HeroSplitScrollUI | {
+    _key: string;
+  } & HeroSplitUI>;
+};
 
 export type PageModulaire = {
-  _id: string
-  _type: 'pageModulaire'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  seo?: Seo
-  title?: LocaleString
-  subTitle?: LocaleString
-  slug?: Slug
-  subMenu?: Array<
-    {
-      _key: string
-    } & KeyVal
-  >
-  tags?: Array<
-    {
-      _key: string
-    } & TagReference
-  >
-  imageCover?: Figure
-  excerpt?: LocaleString
-  modules?: Array<
-    | ({
-        _key: string
-      } & TitleUI)
-    | ({
-        _key: string
-      } & TextUI)
-    | ({
-        _key: string
-      } & TextsUI)
-    | ({
-        _key: string
-      } & TextImageUI)
-    | ({
-        _key: string
-      } & HeroUI)
-    | ({
-        _key: string
-      } & HeroVideoUI)
-    | ({
-        _key: string
-      } & ImageUI)
-    | ({
-        _key: string
-      } & ImagesUI)
-    | ({
-        _key: string
-      } & LogosUI)
-    | ({
-        _key: string
-      } & ContactsUI)
-    | ({
-        _key: string
-      } & ListCardImageTextUI)
-    | ({
-        _key: string
-      } & ListTalentsUI)
-    | ({
-        _key: string
-      } & ListPageUI)
-    | ({
-        _key: string
-      } & MarqueeUI)
-    | ({
-        _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
-      } & CallOutUI)
-    | ({
-        _key: string
-      } & HeroSplitScrollUI)
-    | ({
-        _key: string
-      } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
-  >
-}
+  _id: string;
+  _type: "pageModulaire";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  seo?: Seo;
+  title?: LocaleString;
+  subTitle?: LocaleString;
+  slug?: Slug;
+  subMenu?: Array<{
+    _key: string;
+  } & KeyVal>;
+  tags?: Array<{
+    _key: string;
+  } & TagReference>;
+  imageCover?: Figure;
+  excerpt?: LocaleString;
+  modules?: Array<{
+    _key: string;
+  } & TitleUI | {
+    _key: string;
+  } & TextUI | {
+    _key: string;
+  } & TextsUI | {
+    _key: string;
+  } & TextImageUI | {
+    _key: string;
+  } & HeroUI | {
+    _key: string;
+  } & HeroVideoUI | {
+    _key: string;
+  } & SliderHeroVideoUI | {
+    _key: string;
+  } & ImageUI | {
+    _key: string;
+  } & ImagesUI | {
+    _key: string;
+  } & LogosUI | {
+    _key: string;
+  } & ContactsUI | {
+    _key: string;
+  } & ListCardImageTextUI | {
+    _key: string;
+  } & ListTalentsUI | {
+    _key: string;
+  } & ListPageUI | {
+    _key: string;
+  } & MarqueeUI | {
+    _key: string;
+  } & CallOutUI | {
+    _key: string;
+  } & HeroSplitScrollUI | {
+    _key: string;
+  } & HeroSplitUI>;
+};
 
 export type Talent = {
-  _id: string
-  _type: 'talent'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  seo?: Seo
-  name?: string
-  slug?: Slug
-  imageCover?: Figure
-  text?: LocaleBlockContent
-  links?: Array<
-    {
-      _key: string
-    } & LinkIcon
-  >
-  modules?: Array<
-    | ({
-        _key: string
-      } & TitleUI)
-    | ({
-        _key: string
-      } & TextUI)
-    | ({
-        _key: string
-      } & TextsUI)
-    | ({
-        _key: string
-      } & TextImageUI)
-    | ({
-        _key: string
-      } & HeroUI)
-    | ({
-        _key: string
-      } & HeroVideoUI)
-    | ({
-        _key: string
-      } & ImageUI)
-    | ({
-        _key: string
-      } & ImagesUI)
-    | ({
-        _key: string
-      } & LogosUI)
-    | ({
-        _key: string
-      } & ContactsUI)
-    | ({
-        _key: string
-      } & ListCardImageTextUI)
-    | ({
-        _key: string
-      } & ListTalentsUI)
-    | ({
-        _key: string
-      } & ListPageUI)
-    | ({
-        _key: string
-      } & MarqueeUI)
-    | ({
-        _key: string
-      } & SplitImageTextUI)
-    | ({
-        _key: string
-      } & CallOutUI)
-    | ({
-        _key: string
-      } & HeroSplitScrollUI)
-    | ({
-        _key: string
-      } & HeroSplitUI)
-    | ({
-        _key: string
-      } & SliderCardImageTextUI)
-  >
-}
+  _id: string;
+  _type: "talent";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  seo?: Seo;
+  name?: string;
+  slug?: Slug;
+  imageCover?: Figure;
+  text?: LocaleBlockContent;
+  links?: Array<{
+    _key: string;
+  } & LinkIcon>;
+  modules?: Array<{
+    _key: string;
+  } & TitleUI | {
+    _key: string;
+  } & TextUI | {
+    _key: string;
+  } & TextsUI | {
+    _key: string;
+  } & TextImageUI | {
+    _key: string;
+  } & HeroUI | {
+    _key: string;
+  } & HeroVideoUI | {
+    _key: string;
+  } & SliderHeroVideoUI | {
+    _key: string;
+  } & ImageUI | {
+    _key: string;
+  } & ImagesUI | {
+    _key: string;
+  } & LogosUI | {
+    _key: string;
+  } & ContactsUI | {
+    _key: string;
+  } & ListCardImageTextUI | {
+    _key: string;
+  } & ListTalentsUI | {
+    _key: string;
+  } & ListPageUI | {
+    _key: string;
+  } & MarqueeUI | {
+    _key: string;
+  } & CallOutUI | {
+    _key: string;
+  } & HeroSplitScrollUI | {
+    _key: string;
+  } & HeroSplitUI>;
+};
 
-export type MuxVideoAssetReference = MuxVideoAsset
+export type MuxVideoAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "mux.videoAsset";
+};
 
 export type MuxVideo = {
-  _type: 'mux.video'
-  asset?: MuxVideoAssetReference
-}
+  _type: "mux.video";
+  asset?: MuxVideoAssetReference;
+};
 
 export type MuxVideoAsset = {
-  _id: string
-  _type: 'mux.videoAsset'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  status?: string
-  assetId?: string
-  playbackId?: string
-  filename?: string
-  thumbTime?: number
-  data?: MuxAssetData
-}
+  _id: string;
+  _type: "mux.videoAsset";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  status?: string;
+  assetId?: string;
+  playbackId?: string;
+  filename?: string;
+  thumbTime?: number;
+  data?: MuxAssetData;
+};
 
 export type MuxAssetData = {
-  _type: 'mux.assetData'
-  resolution_tier?: string
-  upload_id?: string
-  created_at?: string
-  id?: string
-  status?: string
-  max_stored_resolution?: string
-  passthrough?: string
-  encoding_tier?: string
-  video_quality?: string
-  master_access?: string
-  aspect_ratio?: string
-  duration?: number
-  max_stored_frame_rate?: number
-  mp4_support?: string
-  max_resolution_tier?: string
-  tracks?: Array<
-    {
-      _key: string
-    } & MuxTrack
-  >
-  playback_ids?: Array<
-    {
-      _key: string
-    } & MuxPlaybackId
-  >
-  static_renditions?: MuxStaticRenditions
-}
+  _type: "mux.assetData";
+  resolution_tier?: string;
+  upload_id?: string;
+  created_at?: string;
+  id?: string;
+  status?: string;
+  max_stored_resolution?: string;
+  passthrough?: string;
+  encoding_tier?: string;
+  video_quality?: string;
+  master_access?: string;
+  aspect_ratio?: string;
+  duration?: number;
+  max_stored_frame_rate?: number;
+  mp4_support?: string;
+  max_resolution_tier?: string;
+  tracks?: Array<{
+    _key: string;
+  } & MuxTrack>;
+  playback_ids?: Array<{
+    _key: string;
+  } & MuxPlaybackId>;
+  static_renditions?: MuxStaticRenditions;
+};
 
 export type MuxStaticRenditions = {
-  _type: 'mux.staticRenditions'
-  status?: string
-  files?: Array<
-    {
-      _key: string
-    } & MuxStaticRenditionFile
-  >
-}
+  _type: "mux.staticRenditions";
+  status?: string;
+  files?: Array<{
+    _key: string;
+  } & MuxStaticRenditionFile>;
+};
 
 export type MuxStaticRenditionFile = {
-  _type: 'mux.staticRenditionFile'
-  name?: string
-  ext?: string
-  height?: number
-  width?: number
-  bitrate?: number
-  filesize?: string
-  type?: string
-  status?: string
-  resolution_tier?: string
-  resolution?: string
-  id?: string
-  passthrough?: string
-}
+  _type: "mux.staticRenditionFile";
+  name?: string;
+  ext?: string;
+  height?: number;
+  width?: number;
+  bitrate?: number;
+  filesize?: string;
+  type?: string;
+  status?: string;
+  resolution_tier?: string;
+  resolution?: string;
+  id?: string;
+  passthrough?: string;
+};
 
 export type MuxPlaybackId = {
-  _type: 'mux.playbackId'
-  id?: string
-  policy?: string
-}
+  _type: "mux.playbackId";
+  id?: string;
+  policy?: string;
+};
 
 export type MuxTrack = {
-  _type: 'mux.track'
-  id?: string
-  type?: string
-  max_width?: number
-  max_frame_rate?: number
-  duration?: number
-  max_height?: number
-  language_code?: string
-  name?: string
-  status?: string
-  text_source?: string
-  text_type?: string
-}
+  _type: "mux.track";
+  id?: string;
+  type?: string;
+  max_width?: number;
+  max_frame_rate?: number;
+  duration?: number;
+  max_height?: number;
+  language_code?: string;
+  name?: string;
+  status?: string;
+  text_source?: string;
+  text_type?: string;
+};
 
 export type MediaTag = {
-  _id: string
-  _type: 'media.tag'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  name?: Slug
-}
+  _id: string;
+  _type: "media.tag";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: Slug;
+};
 
 export type SanityImagePaletteSwatch = {
-  _type: 'sanity.imagePaletteSwatch'
-  background?: string
-  foreground?: string
-  population?: number
-  title?: string
-}
+  _type: "sanity.imagePaletteSwatch";
+  background?: string;
+  foreground?: string;
+  population?: number;
+  title?: string;
+};
 
 export type SanityImagePalette = {
-  _type: 'sanity.imagePalette'
-  darkMuted?: SanityImagePaletteSwatch
-  lightVibrant?: SanityImagePaletteSwatch
-  darkVibrant?: SanityImagePaletteSwatch
-  vibrant?: SanityImagePaletteSwatch
-  dominant?: SanityImagePaletteSwatch
-  lightMuted?: SanityImagePaletteSwatch
-  muted?: SanityImagePaletteSwatch
-}
+  _type: "sanity.imagePalette";
+  darkMuted?: SanityImagePaletteSwatch;
+  lightVibrant?: SanityImagePaletteSwatch;
+  darkVibrant?: SanityImagePaletteSwatch;
+  vibrant?: SanityImagePaletteSwatch;
+  dominant?: SanityImagePaletteSwatch;
+  lightMuted?: SanityImagePaletteSwatch;
+  muted?: SanityImagePaletteSwatch;
+};
 
 export type SanityImageDimensions = {
-  _type: 'sanity.imageDimensions'
-  height?: number
-  width?: number
-  aspectRatio?: number
-}
+  _type: "sanity.imageDimensions";
+  height?: number;
+  width?: number;
+  aspectRatio?: number;
+};
 
 export type SanityImageMetadata = {
-  _type: 'sanity.imageMetadata'
-  location?: Geopoint
-  dimensions?: SanityImageDimensions
-  palette?: SanityImagePalette
-  lqip?: string
-  blurHash?: string
-  thumbHash?: string
-  hasAlpha?: boolean
-  isOpaque?: boolean
-}
+  _type: "sanity.imageMetadata";
+  location?: Geopoint;
+  dimensions?: SanityImageDimensions;
+  palette?: SanityImagePalette;
+  lqip?: string;
+  blurHash?: string;
+  thumbHash?: string;
+  hasAlpha?: boolean;
+  isOpaque?: boolean;
+};
 
 export type SanityFileAsset = {
-  _id: string
-  _type: 'sanity.fileAsset'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  source?: SanityAssetSourceData
-}
+  _id: string;
+  _type: "sanity.fileAsset";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash?: string;
+  extension?: string;
+  mimeType?: string;
+  size?: number;
+  assetId?: string;
+  uploadId?: string;
+  path?: string;
+  url?: string;
+  source?: SanityAssetSourceData;
+};
 
 export type SanityAssetSourceData = {
-  _type: 'sanity.assetSourceData'
-  name?: string
-  id?: string
-  url?: string
-}
+  _type: "sanity.assetSourceData";
+  name?: string;
+  id?: string;
+  url?: string;
+};
 
 export type SanityImageAsset = {
-  _id: string
-  _type: 'sanity.imageAsset'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  originalFilename?: string
-  label?: string
-  title?: string
-  description?: string
-  altText?: string
-  sha1hash?: string
-  extension?: string
-  mimeType?: string
-  size?: number
-  assetId?: string
-  uploadId?: string
-  path?: string
-  url?: string
-  metadata?: SanityImageMetadata
-  source?: SanityAssetSourceData
-}
+  _id: string;
+  _type: "sanity.imageAsset";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash?: string;
+  extension?: string;
+  mimeType?: string;
+  size?: number;
+  assetId?: string;
+  uploadId?: string;
+  path?: string;
+  url?: string;
+  metadata?: SanityImageMetadata;
+  source?: SanityAssetSourceData;
+};
 
 export type Geopoint = {
-  _type: 'geopoint'
-  lat?: number
-  lng?: number
-  alt?: number
-}
+  _type: "geopoint";
+  lat?: number;
+  lng?: number;
+  alt?: number;
+};
 
-export type AllSanitySchemaTypes =
-  | SliderCardImageTextUI
-  | TextImageUI
-  | HeroSplitUI
-  | HeroSplitScrollUI
-  | SanityImageAssetReference
-  | CallOutUI
-  | SliderUI
-  | SanityImageCrop
-  | SanityImageHotspot
-  | SplitImageTextUI
-  | MarqueeUI
-  | PageModulaireReference
-  | ListPageUI
-  | TagReference
-  | ListCardImageTextUI
-  | TalentReference
-  | ListTalentsUI
-  | ContactsUI
-  | LogosUI
-  | HeroVideoUI
-  | HeroUI
-  | ImagesUI
-  | ImageUI
-  | TextsUI
-  | TextUI
-  | TitleUI
-  | SummaryDetail
-  | CardImageText
-  | Figure
-  | Video
-  | KeyValGroup
-  | KeyValSimple
-  | KeyValText
-  | KeyVal
-  | Embed
-  | Seo
-  | MenuItem
-  | LinkIcon
-  | LinkAnchor
-  | LinkModal
-  | LocaleString
-  | HomeReference
-  | LinkInternal
-  | LinkExternal
-  | BlockContent
-  | LocaleBlockContent
-  | LocaleText
-  | Tag
-  | Slug
-  | Studio
-  | Lieu
-  | SanityFileAssetReference
-  | Settings
-  | Infos
-  | Landing
-  | Home
-  | PageModulaire
-  | Talent
-  | MuxVideoAssetReference
-  | MuxVideo
-  | MuxVideoAsset
-  | MuxAssetData
-  | MuxStaticRenditions
-  | MuxStaticRenditionFile
-  | MuxPlaybackId
-  | MuxTrack
-  | MediaTag
-  | SanityImagePaletteSwatch
-  | SanityImagePalette
-  | SanityImageDimensions
-  | SanityImageMetadata
-  | SanityFileAsset
-  | SanityAssetSourceData
-  | SanityImageAsset
-  | Geopoint
+export type AllSanitySchemaTypes = SliderHeroVideoUI | SliderCardImageTextUI | Slug | LocaleString | TextImageUI | HeroSplitUI | HeroSplitScrollUI | SanityImageAssetReference | CallOutUI | SliderUI | SanityImageCrop | SanityImageHotspot | SplitImageTextUI | LocaleBlockContent | MarqueeUI | PageModulaireReference | ListPageUI | TagReference | ListCardImageTextUI | TalentReference | ListTalentsUI | ContactsUI | LogosUI | HeroVideoUI | HeroUI | ImagesUI | ImageUI | TextsUI | TextUI | TitleUI | HeroVideo | SummaryDetail | CardImageText | Figure | Video | KeyValGroup | KeyValSimple | KeyValText | KeyVal | Embed | Seo | MenuItem | LinkIcon | LinkAnchor | LinkModal | HomeReference | LinkInternal | LinkExternal | BlockContent | LocaleText | Tag | Studio | Lieu | SanityFileAssetReference | Settings | Infos | Landing | Home | PageModulaire | Talent | MuxVideoAssetReference | MuxVideo | MuxVideoAsset | MuxAssetData | MuxStaticRenditions | MuxStaticRenditionFile | MuxPlaybackId | MuxTrack | MediaTag | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint;
+

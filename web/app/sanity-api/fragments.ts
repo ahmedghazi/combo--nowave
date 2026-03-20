@@ -116,14 +116,13 @@ export const heroUI = `
 		}
 	}
 `;
-export const heroVideoUI = `
-	_type == 'heroVideoUI' => {
+const heroVideo = `
+	...,
+	image {
 		...,
-		image {
-			...,
-			asset->
-		},
-		videoLandscape{
+		asset->
+	},
+	videoLandscape{
 			...,
 			asset->
 		},
@@ -133,6 +132,17 @@ export const heroVideoUI = `
 		},
 		talent->{
 			name
+		}
+`;
+export const heroVideoUI = `
+	_type == 'heroVideoUI' => {
+		${heroVideo}
+	}
+`;
+export const sliderHeroVideoUI = `
+	_type == 'sliderHeroVideoUI' => {
+		items[]{
+			${heroVideo}
 		}
 	}
 `;
@@ -378,6 +388,7 @@ export const modules = `
 	...,
 	${heroUI},
 	${heroVideoUI},
+	${sliderHeroVideoUI},
   ${imagesUI},
   ${logosUI},
 	${titleUI},

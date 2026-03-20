@@ -501,9 +501,17 @@
         }
       }
     }
-    &.module--hero-video-ui {
+    &.module--hero-video-ui,
+    &.module--slider-hero-video-ui {
       background-color: black;
-      height: calc(100dvh - var(--header-h));
+      .hero-video {
+        height: calc(100dvh - var(--header-h));
+        width: 100dvw;
+        position: relative;
+      }
+      & > .overlay {
+        z-index: 10;
+      }
       .overlay {
         position: absolute;
         inset: 0;
@@ -524,6 +532,7 @@
         .talent,
         .date {
           position: absolute;
+          line-height: 1;
         }
         svg {
           width: 85px;
