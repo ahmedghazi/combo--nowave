@@ -198,3 +198,7 @@
     font-size: var(--text-2lg);
   }
 }
+
+.row.reverse {
+  flex-direction: row-reverse;
+}

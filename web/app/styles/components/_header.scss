@@ -26,12 +26,14 @@ header {
       display: block;
     }
     [aria-label="animation"] {
-      border: var(--border);
+      // border: var(--border);
       svg path {
       }
     }
     svg {
       max-width: 10em;
+      // border: var(--border);
+      // border-color: red;
       // path {
       //   fill: var(--color-primary);
       // }

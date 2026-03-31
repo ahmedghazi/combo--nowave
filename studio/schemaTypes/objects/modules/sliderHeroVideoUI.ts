@@ -13,6 +13,7 @@ export default defineField({
     }),
     defineField({
       name: 'items',
+      description: 'Slider',
       type: 'array',
       of: [
         {

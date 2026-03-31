@@ -7,6 +7,9 @@ export default defineField({
   title: 'Text UI',
   type: 'object',
   icon: FiAlignLeft,
+  initialValue: {
+    look: 'default',
+  },
   fields: [
     defineField({
       name: 'look',

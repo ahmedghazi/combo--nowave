@@ -7,6 +7,9 @@ export default defineField({
   title: 'Text Image UI',
   type: 'object',
   icon: BsFileRichtext,
+  initialValue: {
+    direction: '',
+  },
   fields: [
     defineField({
       name: 'title',

@@ -20,7 +20,7 @@ const ModuleTextImageUI = ({ input }: Props) => {
   return (
     <section className={clsx("module module--text-image-ui")}>
       <div className='inner'>
-        <div className={clsx("row", direction)}>
+        <div className={clsx("row", direction, " tir")}>
           <div className='col-md-6 col-xs-12'>
             <div className='col-txt'>
               <AOS>

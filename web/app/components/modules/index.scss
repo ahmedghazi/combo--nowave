@@ -565,6 +565,8 @@
     &.module--title-ui {
       .inner {
         padding: var(--spacing-50);
+        background-color: var(--backgroundColor, #000);
+        color: var(--color, #fff);
       }
       h2 {
         text-align: center;
