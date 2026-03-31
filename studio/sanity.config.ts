@@ -12,7 +12,7 @@ import {presentationTool} from 'sanity/presentation'
 import {linkResolver} from './src/linkResolver'
 
 const devOnlyPlugins = [getStartedPlugin()]
-const remoteURL = 'https://combo-no-wave.vercel.app'
+const remoteURL = 'https://combo-nowave.vercel.app'
 const localURL = 'http://localhost:3000'
 const previewURL = window.location.hostname === 'localhost' ? localURL : remoteURL
 
