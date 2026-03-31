@@ -23,6 +23,7 @@ const Splash = ({ settings }: Props) => {
   );
 
   useEffect(() => {
+    if (canDisplay) window.scrollTo(0, 1);
     if (!canDisplay) return;
     setTimeout(() => {
       setCollapse(true);
@@ -31,10 +32,9 @@ const Splash = ({ settings }: Props) => {
 
   useEffect(() => {
     if (collapse) {
-      window.scrollTo(0, window.innerHeight);
       setTimeout(() => {
         setDel(true);
-      }, 1000);
+      }, 4000);
     }
   }, [collapse]);
 
@@ -42,11 +42,11 @@ const Splash = ({ settings }: Props) => {
     <div
       className={clsx(
         "splash",
-        // { "is-collapsed": collapse },
+        { "is-collapsed": collapse },
         // { hidden: !canDisplay },
         { hidden: del },
       )}
-      onMouseMove={() => setCollapse(true)}
+      // onMouseMove={() => setCollapse(true)}
       onClick={() => setCollapse(true)}>
       <div className='flex'>
         <div className='loading'>Loading...</div>

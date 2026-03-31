@@ -153,10 +153,41 @@
 
 .cta {
   // @extend .btn;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: var(--border);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  // border-left: var(--border);
+  // border-right: var(--border);
   display: inline-block;
   align-self: flex-start;
+  position: relative;
+  text-transform: uppercase;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: var(--spacing-sm);
+    bottom: var(--spacing-sm);
+    width: 1em;
+    background-color: var(--color-primary);
+    transform: scaleY(2);
+  }
+  &::before {
+    border-top-right-radius: 2em;
+  }
+  &::after {
+    border-bottom-left-radius: 2em;
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+  &:hover {
+    &::before,
+    &::after {
+      background-color: var(--color-accent);
+    }
+  }
   &--block {
     background-color: var(--color-primary);
     color: var(--color-secondary);

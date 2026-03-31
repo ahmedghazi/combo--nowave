@@ -1,8 +1,14 @@
 .splash {
   height: 100dvh;
   padding: var(--spacing-50);
+  position: fixed;
+  inset: 0;
+  z-index: 251;
+  background-color: var(--color-bg);
+  transition: transform 0.4s ease;
   &.is-collapsed {
-    display: none;
+    // display: none;
+    transform: translateY(-100%);
   }
   .flex {
     display: flex;
