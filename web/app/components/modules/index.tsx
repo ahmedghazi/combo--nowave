@@ -21,7 +21,7 @@ import ModuleTextsUI from "./TextsUI";
 import ModuleImagesUI from "./ImagesUI";
 import ModulelogosUI from "./logosUI";
 import ModuleListTalentsUI from "./ListTalentsUI";
-import ModuleHeroVideoUI from "./HeroVideoUI";
+// import ModuleHeroVideoUI from "./HeroVideoUI";
 import ModuleTitleUI from "./TitleUI";
 import { ModulesList } from "@/app/types/extra-types";
 import ModuleSliderHeroVideoUI from "./SliderHeroVideoUI";
@@ -41,8 +41,8 @@ const Modules = ({ modules }: ModulesList) => {
           return <ModuleTextImageUI key={module._key} input={module} />;
         case "heroUI":
           return <ModuleHeroUI key={module._key} input={module} />;
-        case "heroVideoUI":
-          return <ModuleHeroVideoUI key={module._key} input={module} />;
+        // case "heroVideoUI":
+        //   return <ModuleHeroVideoUI key={module._key} input={module} />;
         case "sliderHeroVideoUI":
           return <ModuleSliderHeroVideoUI key={module._key} input={module} />;
         case "imagesUI":
