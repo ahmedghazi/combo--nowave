@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 import { sanityFetch } from "./sanity.client";
 // import { Home, PageModulaire, Settings } from "../types/schema";
 import { blockContent, modules, seo } from "./fragments";
-import { Home, PageModulaire, Settings } from "../types/sanity.types";
+import { Home, PageModulaire, Settings, Talent } from "../types/sanity.types";
 // import { revalidatePath } from "next/cache";
 
 /*****************************************************************************************************
@@ -162,4 +162,37 @@ export async function getAllPagesModulaire(): Promise<PageModulaire[]> {
     query: getAllPagesQuery,
     tags: ["pagesModulaire"],
   });
+}
+
+/*****************************************************************************************************
+ * TALENT
+ */
+export const TALENT_QUERY = groq`*[_type == "talent" && slug.current == $slug][0]{
+  ...,
+  seo{
+    ${seo}
+  },
+  image{
+    ...,
+    asset->
+  },
+  text{
+    ${blockContent}
+  },
+  links[]{
+    ...,
+    icon{
+      ...,
+      asset->
+    }
+  }
+}`;
+export async function getTalent(slug: string): Promise<Talent> {
+  // revalidatePath(slug);
+  return sanityFetch({
+    query: TALENT_QUERY,
+    tags: ["talent"],
+    qParams: { slug: slug },
+  });
+  // return cachedClient(PAGE_MODULAIRE_QUERY, { slug: slug });
 }

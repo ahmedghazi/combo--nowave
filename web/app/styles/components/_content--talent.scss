@@ -1,0 +1,31 @@
+.content--talent {
+  .hero {
+    img {
+      max-height: 100dvh;
+      object-fit: cover !important;
+    }
+  }
+  .header {
+    padding: var(--spacing-50);
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .text {
+      max-width: 45em;
+      margin: 0 auto;
+      margin-bottom: var(--spacing-50);
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-sm);
+      img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+}

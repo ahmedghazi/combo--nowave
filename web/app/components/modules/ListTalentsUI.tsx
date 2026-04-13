@@ -51,6 +51,7 @@ const ModuleListTalentsUI = ({ input }: Props) => {
                   <CardTalent key={i} input={item} />
                 </AOS>
               )}
+              {!item && <div className='item-placeholder'>...</div>}
             </div>
           ))}
         </div>

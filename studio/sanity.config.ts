@@ -25,11 +25,8 @@ export default defineConfig({
 
   plugins: [
     structureTool({defaultDocumentNode, structure}),
-    visionTool(),
-    ...(isDev ? devOnlyPlugins : []),
-    media(),
-    muxInput(),
     presentationTool({
+      title: 'Live preview',
       resolve: linkResolver,
       previewUrl: {
         origin: previewURL,
@@ -39,6 +36,10 @@ export default defineConfig({
         },
       },
     }),
+    visionTool(),
+    ...(isDev ? devOnlyPlugins : []),
+    media(),
+    muxInput(),
   ],
 
   schema: {

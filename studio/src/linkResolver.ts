@@ -33,5 +33,22 @@ export const linkResolver: PresentationPluginOptions['resolve'] = {
         ],
       }),
     }),
+
+    talent: defineLocations({
+      // Select one or more fields
+      select: {
+        title: 'name',
+        slug: 'slug.current',
+      },
+      // Those fields are available in the resolve callback function
+      resolve: (doc) => ({
+        locations: [
+          {
+            title: doc?.title || 'Untitled',
+            href: `/talent/${doc?.slug}`,
+          },
+        ],
+      }),
+    }),
   },
 }
