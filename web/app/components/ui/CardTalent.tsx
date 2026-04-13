@@ -12,7 +12,7 @@ type Props = {
 };
 
 const CardTalent = ({ input }: Props) => {
-  const { imageCover, name, text, links } = input;
+  const { name, text, links } = input;
 
   // console.log(input);
 
@@ -22,7 +22,7 @@ const CardTalent = ({ input }: Props) => {
       <AOS>
         <div className='inner'>
           <div className='image'>
-            {imageCover && <FigureUI asset={imageCover.image} />}
+            {input.imageCover && <FigureUI asset={input.imageCover.image} />}
           </div>
           <div className='header flex justify-between items-start gap-05e'>
             {name && <h3>{name}</h3>}

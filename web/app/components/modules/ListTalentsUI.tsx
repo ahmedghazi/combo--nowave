@@ -46,9 +46,11 @@ const ModuleListTalentsUI = ({ input }: Props) => {
           )}>
           {items?.map((item, i) => (
             <div className={clsx("item")} key={i}>
-              <AOS delay={i / 5}>
-                <CardTalent key={i} input={item} />
-              </AOS>
+              {item && (
+                <AOS delay={i / 5}>
+                  <CardTalent key={i} input={item} />
+                </AOS>
+              )}
             </div>
           ))}
         </div>
