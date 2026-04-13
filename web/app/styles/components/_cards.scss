@@ -68,11 +68,17 @@
     }
   }
   &--talent {
+    .image img {
+      aspect-ratio: 3 / 4 !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
     .excerpt p {
       margin: 0;
     }
     .links {
       display: flex;
+      align-items: center;
       gap: var(--spacing-sm);
       img {
         width: 36px;

@@ -8,6 +8,7 @@ const i18n = {
     ogLang: "fr_FR",
     search: "Rechercher",
     reserver: "RÉSERVER",
+    readMore: "Lire plus",
   },
   en: {
     default: false,
@@ -18,6 +19,7 @@ const i18n = {
     ogLang: "en_GB",
     search: "Search",
     reserver: "BOOK",
+    readMore: "Read more",
   },
 };
 

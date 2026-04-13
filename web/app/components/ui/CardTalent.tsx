@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Talent } from "@/app/types/sanity.types";
 import { PortableText } from "next-sanity";
 import portableTextComponents from "@/app/sanity-api/portableTextComponents";
+import SanityExcerptToText from "./SanityExcerptToText";
 
 type Props = {
   input: Talent;
@@ -28,12 +29,13 @@ const CardTalent = ({ input }: Props) => {
             {name && <h3>{name}</h3>}
           </div>
           {text && (
-            <div className='excerpt'>
-              <PortableText
-                value={_localizeField(text)}
-                components={portableTextComponents}
-              />
-            </div>
+            // <div className='excerpt'>
+            //   <PortableText
+            //     value={_localizeField(text)}
+            //     components={portableTextComponents}
+            //   />
+            // </div>
+            <SanityExcerptToText input={_localizeField(text)} />
           )}
           {links && (
             <ul className='links'>
