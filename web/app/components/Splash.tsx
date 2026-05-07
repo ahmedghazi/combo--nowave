@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { usePageContext } from "../context/PageContext";
 import LogoAnimated from "./LogoAnimated";
 import { Settings } from "../types/sanity.types";
+import Logo from "./Logo";
 
 type Props = {
   settings: Settings;
@@ -51,6 +52,7 @@ const Splash = ({ settings }: Props) => {
       <div className='flex'>
         <div className='loading'>Loading...</div>
         {logosLottie && <LogoAnimated items={logosLottie} logo={logo} />}
+        {!logosLottie && <Logo />}
         <div className='baseline'>{_localizeField(baseline)}</div>
       </div>
     </div>

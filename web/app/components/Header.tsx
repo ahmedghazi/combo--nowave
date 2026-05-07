@@ -8,6 +8,7 @@ import { Settings } from "../types/sanity.types";
 import LogoAnimated from "./LogoAnimated";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import Logo from "./Logo";
 
 type Props = {
   settings: Settings;
@@ -37,6 +38,7 @@ const Header = ({ settings }: Props) => {
               fallback={true}
             />
           )}
+          {!settings.logosLottie && <Logo />}
           <div className='flex-2'>
             <Burger />
             {settings.navPrimary && <NavPrimary input={settings.navPrimary} />}

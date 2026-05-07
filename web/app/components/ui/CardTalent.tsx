@@ -7,6 +7,7 @@ import { Talent } from "@/app/types/sanity.types";
 import { PortableText } from "next-sanity";
 import portableTextComponents from "@/app/sanity-api/portableTextComponents";
 import SanityExcerptToText from "./SanityExcerptToText";
+import NavSocials from "./NavSocials";
 
 type Props = {
   input: Talent;
@@ -28,35 +29,8 @@ const CardTalent = ({ input }: Props) => {
           <div className='header flex justify-between items-start gap-05e'>
             {name && <h3>{name}</h3>}
           </div>
-          {text && (
-            // <div className='excerpt'>
-            //   <PortableText
-            //     value={_localizeField(text)}
-            //     components={portableTextComponents}
-            //   />
-            // </div>
-            <SanityExcerptToText input={_localizeField(text)} />
-          )}
-          {links && (
-            <ul className='links'>
-              {links.map((item, i) => (
-                <li key={i}>
-                  <a href={item.link}>
-                    {/* {link.label} */}
-                    {item.icon && (
-                      <img
-                        src={item.icon.asset?.url || ""}
-                        width={36}
-                        height={36}
-                        alt={item.label}
-                      />
-                    )}
-                    {!item.icon && <span>{item.label}</span>}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
+          {text && <SanityExcerptToText input={_localizeField(text)} />}
+          {links && <NavSocials links={links} />}
           <Link href={_linkResolver(input)} className='cta'>
             En savoir plus
           </Link>

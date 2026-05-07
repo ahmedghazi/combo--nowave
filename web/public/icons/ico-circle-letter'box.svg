@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{filter:url(#Adobe_OpacityMaskFilter);}
+	.st2{mask:url(#mask-2);fill:#FFFFFF;}
+	.st3{filter:url(#Adobe_OpacityMaskFilter_1_);}
+	.st4{mask:url(#mask-4);fill:#FFFFFF;}
+</style>
+<title>letterboxd-decal-dots-neg-mono</title>
+<g id="letterboxd-decal-dots-neg-mono">
+	<circle id="Circle" cx="250" cy="250" r="250"/>
+	<g id="Dots" transform="translate(61.000000, 180.000000)">
+		<ellipse id="Green" class="st0" cx="189" cy="70" rx="70.1" ry="70"/>
+		<g id="Blue" transform="translate(248.152672, 0.000000)">
+			<g id="Mask">
+			</g>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-10.3" y="0" width="140.2" height="140">
+					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="-10.3" y="0" width="140.2" height="140" id="mask-2">
+				<g class="st1">
+					<rect id="path-1" x="0" class="st0" width="129.8" height="141.4"/>
+				</g>
+			</mask>
+			<ellipse class="st2" cx="59.8" cy="70" rx="70.1" ry="70"/>
+		</g>
+		<g id="Orange">
+			<g id="Mask_1_">
+			</g>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="0" y="0" width="140.2" height="140">
+					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="0" y="0" width="140.2" height="140" id="mask-4">
+				<g class="st3">
+					<rect id="path-3" x="0" class="st0" width="129.8" height="141.4"/>
+				</g>
+			</mask>
+			<ellipse class="st4" cx="70.1" cy="70" rx="70.1" ry="70"/>
+		</g>
+		<path id="Overlap" d="M129.5,107.1c-6.7-10.7-10.6-23.5-10.6-37.1s3.9-26.3,10.6-37.1c6.7,10.7,10.6,23.5,10.6,37.1
+			S136.3,96.3,129.5,107.1L129.5,107.1z"/>
+		<path id="Overlap_1_" d="M248.5,32.9c6.7,10.7,10.6,23.5,10.6,37.1s-3.9,26.3-10.6,37.1c-6.7-10.7-10.6-23.5-10.6-37.1
+			S241.7,43.7,248.5,32.9L248.5,32.9z"/>
+	</g>
+</g>
+</svg>
