@@ -11,7 +11,7 @@ import { urlFor } from "@/app/sanity-api/sanity-utils";
 import { Metadata, NextPage } from "next";
 import { draftMode } from "next/headers";
 import React from "react";
-import { PageModulaire, Talent } from "@/app/types/sanity.types";
+import { Talent } from "@/app/types/sanity.types";
 import ContentTalent from "@/app/components/ContentTalent";
 import { notFound } from "next/navigation";
 
@@ -29,7 +29,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = await getTalent(slug);
   return {
-    title: `${data?.seo?.metaTitle || data?.title || ""}`,
+    title: `${data?.seo?.metaTitle || data?.name || ""}`,
     description: data?.seo?.metaDescription,
     openGraph: {
       images: data?.seo?.metaImage?.asset
