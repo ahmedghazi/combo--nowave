@@ -9,6 +9,7 @@ import LogoAnimated from "./LogoAnimated";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
+import Link from "next/link";
 
 type Props = {
   settings: Settings;
@@ -31,14 +32,18 @@ const Header = ({ settings }: Props) => {
       )}>
       <div className='inner'>
         <div className='flex justify-between md:justify-start gap-xl  items-center'>
-          {settings.logosLottie && (
-            <LogoAnimated
-              items={settings.logosLottie}
-              logo={settings.logo}
-              fallback={true}
-            />
-          )}
-          {!settings.logosLottie && <Logo />}
+          <Link href='/'>
+            <>
+              {settings.logosLottie && (
+                <LogoAnimated
+                  items={settings.logosLottie}
+                  logo={settings.logo}
+                  fallback={true}
+                />
+              )}
+              {!settings.logosLottie && <Logo />}
+            </>
+          </Link>
           <div className='flex-2'>
             <Burger />
             {settings.navPrimary && <NavPrimary input={settings.navPrimary} />}
